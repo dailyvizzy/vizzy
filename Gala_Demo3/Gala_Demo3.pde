@@ -11,11 +11,21 @@ PImage bk;  // Declare variable "a" of type PImage
 
 int vizObjectsCir[]={0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
-int vizObjectsColor[]={10, 30, 60, 90, 120, 140, 160, 180, 200, 230};
+int vizObjectsLoc[]={0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+
+import ddf.minim.*;
+
+AudioSample sound;
+
+Minim minim;
+AudioPlayer player;
 
 void setup() {
   fullScreen();
   background(255);
+
+  minim = new Minim(this);
+  sound = minim.loadSample( "gas.wav", 512);
 
   img = loadImage("images/ice.png");
   bk = loadImage("images/space.jpg");
@@ -26,7 +36,7 @@ void setup() {
   f = createFont("comic_zine_ot.otf", 80);
   textFont(f);
   fill(255);
-  text("I'm this excited for my future?", 100, 150);
+  text("I'm excited for my future?", 100, 150);
 
 
 
@@ -47,11 +57,8 @@ void draw() {
 
   for (int i=0; i<10; i++) {
     x+=width/11;
-    strokeWeight(3);
-    stroke(0, 230);
-    fill(vizObjectsColor[i], 195, vizObjectsColor[9-i], 30);
     imageMode(CENTER);
-    image(img, x+x2, y+y2, vizObjectsCir[i], vizObjectsCir[i]);
+    image(img, x, y+vizObjectsLoc[i], vizObjectsCir[i], vizObjectsCir[i]);
     fill(255); 
     textSize(70);
   }
@@ -63,33 +70,43 @@ void keyPressed() {
   switch(key) {
   case 'a': 
     vizObjectsCir[0]+=grow;
+    vizObjectsLoc[0]+=20;
     break;
   case 's': 
     vizObjectsCir[1]+=grow;
+    vizObjectsLoc[1]-=20;
     break;
   case 'd': 
     vizObjectsCir[2]+=grow;
+    vizObjectsLoc[2]+=20;
     break;
   case 'f': 
     vizObjectsCir[3]+=grow;
+    vizObjectsLoc[3]-=20;
     break;
   case 'g': 
     vizObjectsCir[4]+=grow;
+    vizObjectsLoc[4]+=20;
     break;
   case 'h': 
     vizObjectsCir[5]+=grow;
+    vizObjectsLoc[5]-=20;
     break;
   case 'j': 
     vizObjectsCir[6]+=grow;
+    vizObjectsLoc[6]+=20;
     break;
   case 'k': 
     vizObjectsCir[7]+=grow;
+    vizObjectsLoc[7]-=20;
     break;
   case 'l': 
     vizObjectsCir[8]+=grow;
+    vizObjectsLoc[8]+=20;
     break;
   case ';': 
     vizObjectsCir[9]+=grow;
+    vizObjectsLoc[9]-=20;
     break;
   case '0': 
     background(255);
@@ -97,7 +114,7 @@ void keyPressed() {
       vizObjectsCir[i]=0;
     }
     textSize(80);
-    text("How excited are you?", 100, 150);
+    text("I'm excited for my future?", 100, 150);
     x=0;
     for (int i=0; i<10; i++) {
       x+=width/11;
@@ -110,4 +127,5 @@ void keyPressed() {
     }
     break;
   }
+  sound.trigger();
 }

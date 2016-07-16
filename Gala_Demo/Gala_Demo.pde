@@ -18,7 +18,7 @@ void setup() {
   f = createFont("3Dumb.ttf", 80);
   textFont(f);
   fill(0);
-  text("How excited are you?", width/2-300, 150);
+  text("Last Weekend was fun!!!", width/2-300, 150);
 
   img = loadImage("images/1.png");
 
@@ -92,7 +92,7 @@ void keyPressed() {
       vizObjectsCir[i]=0;
     }
     textSize(80);
-    text("How excited are you?", width/2-300, 150);
+    text("Last Weekend was fun!!!", width/2-300, 150);
     x=0;
     for (int i=0; i<10; i++) {
       x+=width/11;
