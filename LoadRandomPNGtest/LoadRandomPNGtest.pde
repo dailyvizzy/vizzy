@@ -2,11 +2,11 @@ PImage img;  // Declare variable of type PImage
 int randImg;
 
 
-File dir = new File(dataPath("/Users/akleindolph/Documents/Processing/Daily_Data_Viz/LoadRandomPNGtest/images/"));
+File dir = new File(dataPath("/Users/akleindolph/Documents/Processing3/Daily_Data_Viz/LoadRandomPNGtest/images/"));
 String[] list = dir.list();
 
 void setup() {
-  img = loadImage("/Users/akleindolph/Documents/Processing/Daily_Data_Viz/LoadRandomPNGtest/images/"+list[0]);
+  img = loadImage("/Users/akleindolph/Documents/Processing3/Daily_Data_Viz/LoadRandomPNGtest/images/"+list[0]);
   size(displayWidth, displayHeight); 
   background(255);
   println(list);
