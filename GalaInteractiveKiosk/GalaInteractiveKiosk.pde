@@ -1,45 +1,52 @@
-AnimationsManager animationsManager;bb
+
+AnimationsManager animationsManager;
+FontsManager fontsManager;
+ImagesManager imagesManager;
+QuestionsManager questionsManager;
+
+AbstractAnimation dailyAnimation;
+
 
 void setup () {
-
-  size(1024, 768, OPENGL);
+  
+  //size(1024, 768);
+  fullScreen();
   noSmooth();
   frameRate(60);
-
-  // we init the the animation manager,
+  
   animationsManager = new AnimationsManager(this);
-  animationsManager.setAnimations();
-  animationsManager.setAudioInput(in);
+  fontsManager = new FontsManager();
+  imagesManager = new ImagesManager();
+  questionsManager = new QuestionsManager();
+  
+  animationsManager.initAnimations();
+  
+  initRandomAnimation();
 
-
+  dailyAnimation.setup();
 }
 
-
+void initRandomAnimation() {
+  
+  dailyAnimation = animationsManager.getRandomAnimation();
+  
+  dailyAnimation.font = fontsManager.getRandomFont();
+  dailyAnimation.image = imagesManager.getRandomPNG();
+  dailyAnimation.background = imagesManager.getRandomBack();
+  dailyAnimation.question = questionsManager.getCurrentQuestion();
+  
+  
+  
+}
 
 void draw() {
+  dailyAnimation.draw();
+}
 
-  // clear background color
-  background(0);
-
-  // We store our animation as a graphic texture and get it
-  animationsManager.update();
-  animationsManager.prepass();
-  tex = animationsManager.getCanvasAsTexture();
-  
- 
-  pushMatrix();
-  //Draw animation
-  popMatrix();
+void update() {
+  dailyAnimation.update();
 }
 
 void keyPressed () {
-
-
-  if (key == ' ') 
-    animationsManager.nextAnimation();
-    animationsManager.keyPressed(key);
+  dailyAnimation.keyPressed(key);
 }
-
-
-
-
