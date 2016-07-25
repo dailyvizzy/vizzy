@@ -11,8 +11,9 @@ void setup () {
   
   //size(1024, 768);
   fullScreen();
-  noSmooth();
+  smooth();
   frameRate(60);
+  textAlign(CENTER,CENTER);
   
   animationsManager = new AnimationsManager(this);
   fontsManager = new FontsManager();
