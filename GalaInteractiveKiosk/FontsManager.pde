@@ -18,6 +18,7 @@ class FontsManager {
   PFont getRandomFont(){
     randFont = random((int)fontFileNames.length);
     font = createFont(path+"/"+fontFileNames[(int)randFont], 60);
+    println("currentfont" + " " + fontFileNames[(int)randFont]);   //see randomly choosen font
     return font;
   }
     

@@ -11,8 +11,9 @@ void setup () {
   
   //size(1024, 768);
   fullScreen();
-  noSmooth();
+  smooth();
   frameRate(60);
+  textAlign(CENTER,CENTER);
   
   animationsManager = new AnimationsManager(this);
   fontsManager = new FontsManager();
@@ -34,7 +35,7 @@ void getRandomAnimation() {
   dailyAnimation.image = imagesManager.getRandomPNG();
   dailyAnimation.background = imagesManager.getRandomBack();
   dailyAnimation.question = questionsManager.getCurrentQuestion();
- 
+  dailyAnimation.imgOrVec = (int)random(2);
 }
 
 void draw() {

@@ -7,11 +7,13 @@ public class AbstractAnimation {
   PFont font;
   PImage image;
   PImage background;
+  int imgOrVec;
   int w, h;
   
   AbstractAnimation (PApplet app) 
   {
     this.app = app;
+    imgOrVec = 0;
     size(width, height);
   }
   

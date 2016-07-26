@@ -1,8 +1,6 @@
 float x=0; 
 float y=0;   //general x and y
-float numSize = 100;   //size of numbers
 float qDistTop = 110;  //y value for question
-float numDistTop = 270; //y value for numbers
 
 PFont font;  //font object
 float randFont; //font randomizer
@@ -37,16 +35,6 @@ void setup() {
   textSize((displayWidth/2) - (575 + (curQ.length()*2)));     //text adjusts to size of question
   text(curQ, width/2, qDistTop);
 
-  textSize(numSize);    //number text size
-
-  for (int i=0; i<5; i++) {
-    x+=width/6;
-    strokeWeight(3);
-    stroke(0, 230);
-    fill(0);
-    y=height/2;
-    text(i+1, x, numDistTop);
-  }
 }
 
 void draw() {
@@ -107,16 +95,6 @@ void displayQ() {
 
   for (int i=0; i<5; i++) {
     vizGrowth[i]=0;
-  }
-  textSize(numSize);    //number text size
-
-  for (int i=0; i<5; i++) {
-    x+=width/6;
-    strokeWeight(3);
-    stroke(0, 230);
-    fill(0);
-    y=height/2;
-    text(i+1, x, numDistTop);
   }
 }
 
