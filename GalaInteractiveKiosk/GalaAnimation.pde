@@ -2,9 +2,7 @@ class GalaAnimation extends AbstractAnimation {
 
   private float x=0; 
   private float y=0;   //general x and y
-  private float numSize = 100;   //size of numbers
   private float qEdgeDist = 150;  //y value for question
-  private float numEdgeDist = 110; //y value for numbers
   private float txtSize = 70;
 
   int vizObjectsCir[]={0, 0, 0, 0, 0};
@@ -43,7 +41,6 @@ class GalaAnimation extends AbstractAnimation {
       ellipse(x, y, vizObjectsCir[i], vizObjectsCir[i]);
       fill(0); 
       textSize(txtSize);
-      //image(image, 20, 40);
     }
   }
 

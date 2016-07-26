@@ -2,13 +2,13 @@ class GalaAnimationBar extends AbstractAnimation {
 
   private float x=0; 
   private float y=0;   //general x and y
-  private float numSize = 100;   //size of numbers
   private float qEdgeDist = 150;  //y value for question
-  private float numEdgeDist = 110; //y value for numbers
   private float txtSize = 70;
+  private float rectHeight=10;    //used for rect height
+  private float rectWide=220;    //used for rect height
 
-  int vizObjectsCir[]={0, 0, 0, 0, 0};
-  int vizObjectsColor[]={220, 160, 120, 60, 10};
+  int vizGrowth[]={0, 0, 0, 0, 0};
+  int vizObjectsColor[]={10, 60, 120, 160, 200};
 
   GalaAnimationBar(PApplet app) {
     super(app);
@@ -21,41 +21,24 @@ class GalaAnimationBar extends AbstractAnimation {
     fill(0);
     textSize(txtSize);
     text(question, width/2, qEdgeDist);
-
-    for (int i=0; i<5; i++) {
-      x+=width/6;
-      strokeWeight(3);
-      stroke(0, 230);
-      fill(0);
-      y=height/2;
-      text(i+1, x, height-numEdgeDist);
-    }
     textSize(txtSize/2.1);
-    text("Disagree", numEdgeDist, (height-numEdgeDist)+2);
-    text("Agree", width-numEdgeDist, (height-numEdgeDist)+2);
   }
 
   public void update() {
   }
-
 
   public void draw() {
     super.draw();
     y=height/2;
     x=0;
 
-    for (int i=0; i<5; i++) 
-    {
+    y=height;
+    x=0;
+    for (int i=0; i<5; i++) {
       x+=width/6;
-      pushMatrix();
-      strokeWeight(3);
-      stroke(0, 230);
-      fill(vizObjectsColor[i], 195, vizObjectsColor[4-i], 30);
-      popMatrix();
-      ellipse(x, y, vizObjectsCir[i], vizObjectsCir[i]);
-      fill(0); 
-      textSize(txtSize);
-      //image(image, 20, 40);
+      fill(vizObjectsColor[i], vizObjectsColor[4-i], 195, 30);
+      rectMode(CENTER);
+      rect(x, y, 230, vizGrowth[i]);
     }
   }
 
@@ -64,37 +47,29 @@ class GalaAnimationBar extends AbstractAnimation {
 
     switch(key) {
     case '1': 
-      vizObjectsCir[0]+=grow;
+      vizGrowth[0]-=grow;
       break;
     case '2': 
-      vizObjectsCir[1]+=grow;
+      vizGrowth[1]-=grow;
       break;
     case '3': 
-      vizObjectsCir[2]+=grow;
+      vizGrowth[2]-=grow;
       break;
     case '4': 
-      vizObjectsCir[3]+=grow;
+      vizGrowth[3]-=grow;
       break;
     case '5': 
-      vizObjectsCir[4]+=grow;
+      vizGrowth[4]-=grow;
       break;
-    case '0':                    //clear animation and provide new question
+    case '0':
       background(255);
-      for (int i=0; i<10; i++) {
-        vizObjectsCir[i]=0;
+      for (int i=0; i<5; i++) {
+        vizGrowth[i]=0;
       }
+      fill(0);
       textSize(txtSize);
       text(question, width/2, qEdgeDist);
       x=0;
-      for (int i=0; i<5; i++) {
-        x+=width/6;
-        strokeWeight(3);
-        stroke(0, 230);
-        fill(0);
-        y=height/2;
-        textSize(txtSize);
-        text(i+1, x, height-numEdgeDist);
-      }
       break;
     }
   }
