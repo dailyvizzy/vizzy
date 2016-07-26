@@ -21,37 +21,39 @@ void setup () {
   questionsManager = new QuestionsManager();
   
   animationsManager.initAnimations();
-  
-  getRandomAnimation();
+  getRandomElements();
 
-  dailyAnimation.setup();
 }
 
-void getRandomAnimation() {
+void getRandomElements() {
   
   dailyAnimation = animationsManager.getRandomAnimation();
-  
   dailyAnimation.font = fontsManager.getRandomFont();
   dailyAnimation.image = imagesManager.getRandomPNG();
   dailyAnimation.background = imagesManager.getRandomBack();
   dailyAnimation.question = questionsManager.getCurrentQuestion();
   dailyAnimation.imgOrVec = (int)random(2);
+  
+  dailyAnimation.setup();
 }
 
 void draw() {
-  dailyAnimation.draw();
+  if (dailyAnimation != null) dailyAnimation.draw();
 }
 
 void update() {
-  dailyAnimation.update();
+   if (dailyAnimation != null) dailyAnimation.update();
 }
 
 void keyPressed () {
   
-  dailyAnimation.keyPressed(key);
-  switch(key) {
-     case '0': 
-        getRandomAnimation();
-        break;
+   if (dailyAnimation != null)
+   {
+     dailyAnimation.keyPressed(key);
+     switch(key) {
+        case '0': 
+           getRandomElements();
+           break;
+     }
    }
 }

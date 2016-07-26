@@ -6,11 +6,9 @@ class AnimationsManager {
   AbstractAnimation currentAnim;
 
   int animIndex = 0;
-  boolean bHasChanged;
   
   AnimationsManager(PApplet app) {
     this.app = app;
-    bHasChanged = false;
   } 
 
   void initAnimations () {
@@ -19,34 +17,19 @@ class AnimationsManager {
     anims.add( new GalaAnimation(app));
     anims.add( new GalaAnimationBar(app));
     
-    setAnimation((int)random(anims.size()));
-    currentAnim = anims.get(animIndex);
-  }
-  
-
-  void setup(){
-     currentAnim.setup();
-  }
-
-  void update () { 
-    currentAnim.update();
-   
-    if (bHasChanged) {
-      //currentAnim = anims.get(animIndex);
-    }
-  }
-  
-  void draw() {
-    currentAnim.draw();
+    //setAnimation((int)random(anims.size()));
+    //currentAnim = anims.get(animIndex);
   }
 
   void setAnimation(int index)
   {
     animIndex = index;
-    bHasChanged = true;
+    currentAnim = anims.get(animIndex);
   }
 
  AbstractAnimation getRandomAnimation(){
+   int random = (int)random(anims.size());
+   setAnimation(random);
    return currentAnim;
  }
   
