@@ -21,12 +21,12 @@ void setup () {
   
   animationsManager.initAnimations();
   
-  initRandomAnimation();
+  getRandomAnimation();
 
   dailyAnimation.setup();
 }
 
-void initRandomAnimation() {
+void getRandomAnimation() {
   
   dailyAnimation = animationsManager.getRandomAnimation();
   
@@ -34,9 +34,7 @@ void initRandomAnimation() {
   dailyAnimation.image = imagesManager.getRandomPNG();
   dailyAnimation.background = imagesManager.getRandomBack();
   dailyAnimation.question = questionsManager.getCurrentQuestion();
-  
-  
-  
+ 
 }
 
 void draw() {
@@ -48,5 +46,11 @@ void update() {
 }
 
 void keyPressed () {
+  
   dailyAnimation.keyPressed(key);
+  switch(key) {
+     case '0': 
+        getRandomAnimation();
+        break;
+   }
 }
