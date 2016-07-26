@@ -7,15 +7,14 @@ class QuestionsManager {
   
   QuestionsManager() { 
     table = loadTable("data/questions/Gala_CSV_Questions.csv");
-    loadData();
   } 
   
-  void loadData() {
+  private void loadQuestion() {
     currentQuestion = table.getString(table.getRowCount()-1, 0);
     getReadyToNext();
   }
   
-  void getReadyToNext() {
+  private void getReadyToNext() {
     
     table.addRow();                                       //add a row
     for (int i=table.getRowCount()-2; i>=0; i--) {        //copy every row string to the row below
@@ -29,7 +28,8 @@ class QuestionsManager {
     saveTable(table, "data/questions/Gala_CSV_Questions.csv");           // Writing the CSV back to the same file        
   }
   
-  String getCurrentQuestion(){
+  public String getCurrentQuestion(){
+    this.loadQuestion();
     return currentQuestion;
   }
 }

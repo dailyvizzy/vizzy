@@ -22,12 +22,12 @@ void setup () {
   
   animationsManager.initAnimations();
   
-  initRandomAnimation();
+  getRandomAnimation();
 
   dailyAnimation.setup();
 }
 
-void initRandomAnimation() {
+void getRandomAnimation() {
   
   dailyAnimation = animationsManager.getRandomAnimation();
   
@@ -47,5 +47,11 @@ void update() {
 }
 
 void keyPressed () {
+  
   dailyAnimation.keyPressed(key);
+  switch(key) {
+     case '0': 
+        getRandomAnimation();
+        break;
+   }
 }
