@@ -17,6 +17,7 @@ class AnimationsManager {
    
     anims = new ArrayList<AbstractAnimation>();
     anims.add( new GalaAnimation(app));
+    anims.add( new GalaAnimationBar(app));
     
     setAnimation(0);
     currentAnim = anims.get(animIndex);

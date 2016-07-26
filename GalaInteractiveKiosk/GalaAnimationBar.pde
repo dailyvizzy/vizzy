@@ -1,4 +1,4 @@
-class GalaAnimation extends AbstractAnimation {
+class GalaAnimationBar extends AbstractAnimation {
 
   private float x=0; 
   private float y=0;   //general x and y
@@ -10,7 +10,7 @@ class GalaAnimation extends AbstractAnimation {
   int vizObjectsCir[]={0, 0, 0, 0, 0};
   int vizObjectsColor[]={220, 160, 120, 60, 10};
 
-  GalaAnimation(PApplet app) {
+  GalaAnimationBar(PApplet app) {
     super(app);
   } 
 
@@ -21,6 +21,18 @@ class GalaAnimation extends AbstractAnimation {
     fill(0);
     textSize(txtSize);
     text(question, width/2, qEdgeDist);
+
+    for (int i=0; i<5; i++) {
+      x+=width/6;
+      strokeWeight(3);
+      stroke(0, 230);
+      fill(0);
+      y=height/2;
+      text(i+1, x, height-numEdgeDist);
+    }
+    textSize(txtSize/2.1);
+    text("Disagree", numEdgeDist, (height-numEdgeDist)+2);
+    text("Agree", width-numEdgeDist, (height-numEdgeDist)+2);
   }
 
   public void update() {
@@ -68,12 +80,21 @@ class GalaAnimation extends AbstractAnimation {
       break;
     case '0':                    //clear animation and provide new question
       background(255);
-      for (int i=0; i<5; i++) {
+      for (int i=0; i<10; i++) {
         vizObjectsCir[i]=0;
       }
       textSize(txtSize);
       text(question, width/2, qEdgeDist);
       x=0;
+      for (int i=0; i<5; i++) {
+        x+=width/6;
+        strokeWeight(3);
+        stroke(0, 230);
+        fill(0);
+        y=height/2;
+        textSize(txtSize);
+        text(i+1, x, height-numEdgeDist);
+      }
       break;
     }
   }

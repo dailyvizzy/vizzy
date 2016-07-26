@@ -26,7 +26,7 @@ class QuestionsManager {
     movingQuestion = table.getString(table.getRowCount()-1, 0);    //move the bottom row string to the top
     table.setString(0, 0, movingQuestion);
     table.removeRow(table.getRowCount()-1); 
-    saveTable(table, "data/questions/gala_CSV_test.csv");           // Writing the CSV back to the same file        
+    saveTable(table, "data/questions/Gala_CSV_Questions.csv");           // Writing the CSV back to the same file        
   }
   
   String getCurrentQuestion(){
