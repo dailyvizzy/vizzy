@@ -4,7 +4,7 @@ class GalaAnimation extends AbstractAnimation {
   private float y=0;   //general x and y
   private float qEdgeDist = 150;  //y value for question
   private float txtSize = 70; 
-  
+
 
   int vizObjectsCir[]={0, 0, 0, 0, 0};
   int vizObjectsColor[]={220, 160, 120, 60, 10};
@@ -43,9 +43,8 @@ class GalaAnimation extends AbstractAnimation {
       }
       if (imgOrVec ==1) {                 //visualize with png
         imageMode(CENTER);
-        image(image,100,100);
         fill(vizObjectsColor[i], 195, vizObjectsColor[4-i], 30);
-        rect(x, y, vizObjectsCir[i], vizObjectsCir[i]);
+        image(image, x, y, vizObjectsCir[i], vizObjectsCir[i]);
       }
       fill(0); 
       textSize(txtSize);
