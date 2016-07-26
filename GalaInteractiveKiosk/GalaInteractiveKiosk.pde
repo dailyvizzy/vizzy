@@ -35,9 +35,7 @@ void initRandomAnimation() {
   dailyAnimation.image = imagesManager.getRandomPNG();
   dailyAnimation.background = imagesManager.getRandomBack();
   dailyAnimation.question = questionsManager.getCurrentQuestion();
-  
-  
-  
+  dailyAnimation.imgOrVec = (int)random(2);
 }
 
 void draw() {

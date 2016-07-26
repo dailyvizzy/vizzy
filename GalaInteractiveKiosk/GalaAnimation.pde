@@ -3,7 +3,8 @@ class GalaAnimation extends AbstractAnimation {
   private float x=0; 
   private float y=0;   //general x and y
   private float qEdgeDist = 150;  //y value for question
-  private float txtSize = 70;
+  private float txtSize = 70; 
+  
 
   int vizObjectsCir[]={0, 0, 0, 0, 0};
   int vizObjectsColor[]={220, 160, 120, 60, 10};
@@ -33,12 +34,19 @@ class GalaAnimation extends AbstractAnimation {
     for (int i=0; i<5; i++) 
     {
       x+=width/6;
-      pushMatrix();
-      strokeWeight(3);
-      stroke(0, 230);
-      fill(vizObjectsColor[i], 195, vizObjectsColor[4-i], 30);
-      popMatrix();
-      ellipse(x, y, vizObjectsCir[i], vizObjectsCir[i]);
+
+      if (imgOrVec ==0) {                 //visualize vector graphic
+        strokeWeight(3);
+        stroke(0, 230);
+        fill(vizObjectsColor[i], 195, vizObjectsColor[4-i], 30);
+        ellipse(x, y, vizObjectsCir[i], vizObjectsCir[i]);
+      }
+      if (imgOrVec ==1) {                 //visualize with png
+        imageMode(CENTER);
+        image(image,100,100);
+        fill(vizObjectsColor[i], 195, vizObjectsColor[4-i], 30);
+        rect(x, y, vizObjectsCir[i], vizObjectsCir[i]);
+      }
       fill(0); 
       textSize(txtSize);
     }
