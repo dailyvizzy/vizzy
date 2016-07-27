@@ -2,17 +2,21 @@
 /*todo
 --> .DS_Store file is showing up as font sometimes, causes error
 --> .DS_Store file is also showing up in images file, causes error
---> pngs are not sizing proportionally , backup plan resize in photoshop to make square
+--> pngs are not sizing proportionally, backup plan resize in photoshop to make square
 --> some questions don't make sense with 1-5 scale
 --> We need at least 2 more different animations
 --> what to do with background?
---> do we want to slightly animate the PNGs?
 --> We'll need to hide the cursor
 --> need to hook up and test arduino with buttons
 --> when questions are long they go off the screen, when short can be too small
---> add PNG option to bargraph
+--> DONE : add PNG option to bargraph
 --> need to change question once per day (automatically)
 --> screengrab needs to be saved to folder once per question right before question changes
+
+Questions:
+--> Trails or not on bar graph images?
+--> Do we want question to always be on top of image?
+--> do we want to slightly animate the PNGs?
 */
 
 AnimationsManager animationsManager;

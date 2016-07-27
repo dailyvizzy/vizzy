@@ -29,16 +29,26 @@ class GalaAnimationBar extends AbstractAnimation {
 
   public void draw() {
     super.draw();
-    y=height/2;
-    x=0;
-
+    
     y=height;
     x=0;
-    for (int i=0; i<5; i++) {
+
+    for (int i=0; i<5; i++) 
+    {
       x+=width/6;
-      fill(vizObjectsColor[i], vizObjectsColor[4-i], 195, 30);
-      rectMode(CENTER);
-      rect(x, y, 230, vizGrowth[i]);
+
+      if (imgOrVec == 0) {                 //visualize vector graphic
+        strokeWeight(3);
+        fill(vizObjectsColor[i], vizObjectsColor[4-i], 195, 30);
+        rectMode(CENTER);
+        rect(x, y, 230, vizGrowth[i]);
+      }
+      if (imgOrVec == 1) {                 //visualize with png
+        imageMode(CENTER);
+        fill(vizObjectsColor[i], 195, vizObjectsColor[4-i], 30);
+        image(image, x, y+vizGrowth[i], image.width, image.height);
+      }
+      fill(0);
     }
   }
 
