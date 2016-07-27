@@ -2,15 +2,14 @@ class GalaAnimation extends AbstractAnimation {
 
   private float x=0; 
   private float y=0;   //general x and y
-  private float qEdgeDist = 150;  //y value for question
-  private float txtSize = 70; 
-
-  private float imageW = 0;
-  private float imageH = 0;
+  private float qEdgeDist = 150;  //y value for question 
+  private float txtSize = 70;
 
 
-  int vizObjectsCir[]={0,0,0,0,0};
+  int vizObjectsCir[]={0, 0, 0, 0, 0};
   int vizObjectsColor[]={220, 160, 120, 60, 10};
+
+  //int txtSize[] = {20,40,60,80,100};
 
   GalaAnimation(PApplet app) {
     super(app);
@@ -29,8 +28,11 @@ class GalaAnimation extends AbstractAnimation {
     super.draw();
     background(255);
     textFont(font);
-    fill(0);
     textSize(txtSize);
+    fill(0);
+
+
+    println(textWidth(question));
     text(question, width/2, qEdgeDist);
 
     y=height/2;
@@ -51,8 +53,7 @@ class GalaAnimation extends AbstractAnimation {
         fill(vizObjectsColor[i], 195, vizObjectsColor[4-i], 30);
         image(image, x, y, vizObjectsCir[i], vizObjectsCir[i]);
       }
-      fill(0); 
-      textSize(txtSize);
+      fill(0);
     }
   }
 

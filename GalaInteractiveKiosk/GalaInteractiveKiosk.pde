@@ -1,6 +1,7 @@
 
 /*todo
---> .DS file is showing up as font sometimes
+--> .DS_Store file is showing up as font sometimes, causes error
+--> .DS_Store file is also showing up in images file, causes error
 --> pngs are not sizing proportionally , backup plan resize in photoshop to make square
 --> some questions don't make sense with 1-5 scale
 --> We need at least 2 more different animations
@@ -10,6 +11,8 @@
 --> need to hook up and test arduino with buttons
 --> when questions are long they go off the screen, when short can be too small
 --> add PNG option to bargraph
+--> need to change question once per day (automatically)
+--> screengrab needs to be saved to folder once per question right before question changes
 */
 
 AnimationsManager animationsManager;
