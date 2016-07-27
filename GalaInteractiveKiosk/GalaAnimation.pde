@@ -5,8 +5,11 @@ class GalaAnimation extends AbstractAnimation {
   private float qEdgeDist = 150;  //y value for question
   private float txtSize = 70; 
 
+  private float imageW = 0;
+  private float imageH = 0;
 
-  int vizObjectsCir[]={0, 0, 0, 0, 0};
+
+  int vizObjectsCir[]={1,1,1,1,1};
   int vizObjectsColor[]={220, 160, 120, 60, 10};
 
   GalaAnimation(PApplet app) {
@@ -16,10 +19,6 @@ class GalaAnimation extends AbstractAnimation {
   public void setup() {
     super.setup();
     background(255);
-    textFont(font);
-    fill(0);
-    textSize(txtSize);
-    text(question, width/2, qEdgeDist);
   }
 
   public void update() {
@@ -28,6 +27,12 @@ class GalaAnimation extends AbstractAnimation {
 
   public void draw() {
     super.draw();
+    background(255);
+    textFont(font);
+    fill(0);
+    textSize(txtSize);
+    text(question, width/2, qEdgeDist);
+
     y=height/2;
     x=0;
 
@@ -35,16 +40,17 @@ class GalaAnimation extends AbstractAnimation {
     {
       x+=width/6;
 
-      if (imgOrVec ==0) {                 //visualize vector graphic
+      if (imgOrVec == 0) {                 //visualize vector graphic
         strokeWeight(3);
         stroke(0, 230);
-        fill(vizObjectsColor[i], 195, vizObjectsColor[4-i], 30);
+        fill(vizObjectsColor[i], 195, vizObjectsColor[4-i], 150);
         ellipse(x, y, vizObjectsCir[i], vizObjectsCir[i]);
       }
-      if (imgOrVec ==1) {                 //visualize with png
+      if (imgOrVec == 1) {                 //visualize with png
         imageMode(CENTER);
         fill(vizObjectsColor[i], 195, vizObjectsColor[4-i], 30);
-        image(image, x, y, vizObjectsCir[i], vizObjectsCir[i]);
+        image.resize(vizObjectsCir[i], 0+vizObjectsCir[i]);
+        image(image, x, y);
       }
       fill(0); 
       textSize(txtSize);

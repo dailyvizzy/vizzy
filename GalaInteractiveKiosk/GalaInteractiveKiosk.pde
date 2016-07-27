@@ -1,4 +1,13 @@
 
+/*todo
+--> .DS file is showing up as font sometimes
+--> Images are not sizing proportionally
+--> We need at least 2 more different animations
+--> what to do with background?
+--> do we want to slightly animate the PNGs?
+--> We'll need to hide the cursor 
+*/
+
 AnimationsManager animationsManager;
 FontsManager fontsManager;
 ImagesManager imagesManager;
