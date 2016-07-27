@@ -1,11 +1,15 @@
 
 /*todo
 --> .DS file is showing up as font sometimes
---> Images are not sizing proportionally
+--> pngs are not sizing proportionally , backup plan resize in photoshop to make square
+--> some questions don't make sense with 1-5 scale
 --> We need at least 2 more different animations
 --> what to do with background?
 --> do we want to slightly animate the PNGs?
---> We'll need to hide the cursor 
+--> We'll need to hide the cursor
+--> need to hook up and test arduino with buttons
+--> when questions are long they go off the screen, when short can be too small
+--> add PNG option to bargraph
 */
 
 AnimationsManager animationsManager;

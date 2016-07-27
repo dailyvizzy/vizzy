@@ -9,7 +9,7 @@ class GalaAnimation extends AbstractAnimation {
   private float imageH = 0;
 
 
-  int vizObjectsCir[]={1,1,1,1,1};
+  int vizObjectsCir[]={0,0,0,0,0};
   int vizObjectsColor[]={220, 160, 120, 60, 10};
 
   GalaAnimation(PApplet app) {
@@ -49,8 +49,7 @@ class GalaAnimation extends AbstractAnimation {
       if (imgOrVec == 1) {                 //visualize with png
         imageMode(CENTER);
         fill(vizObjectsColor[i], 195, vizObjectsColor[4-i], 30);
-        image.resize(vizObjectsCir[i], 0+vizObjectsCir[i]);
-        image(image, x, y);
+        image(image, x, y, vizObjectsCir[i], vizObjectsCir[i]);
       }
       fill(0); 
       textSize(txtSize);
