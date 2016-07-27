@@ -10,6 +10,7 @@
 --> need to hook up and test arduino with buttons
 --> when questions are long they go off the screen, when short can be too small
 --> DONE : add PNG option to bargraph
+--> some image scaling probably needs to happen in the bar graph
 --> need to change question once per day (automatically)
 --> screengrab needs to be saved to folder once per question right before question changes
 

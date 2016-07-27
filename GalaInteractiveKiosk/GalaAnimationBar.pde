@@ -20,8 +20,9 @@ class GalaAnimationBar extends AbstractAnimation {
     textFont(font);
     fill(0);
     textSize(txtSize);
-    text(question, width/2, qEdgeDist);
+
     textSize(txtSize/2.1);
+    background(255);
   }
 
   public void update() {
@@ -29,7 +30,7 @@ class GalaAnimationBar extends AbstractAnimation {
 
   public void draw() {
     super.draw();
-    
+
     y=height;
     x=0;
 
@@ -50,6 +51,8 @@ class GalaAnimationBar extends AbstractAnimation {
       }
       fill(0);
     }
+    fill(0);
+    text(question, width/2, qEdgeDist);
   }
 
   public void keyPressed(int key) {
