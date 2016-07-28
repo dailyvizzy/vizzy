@@ -11,6 +11,9 @@ int newloc;
 
 int vizObjectLocX[]={0, 0, 0, 0, 0};
 int vizObjectLocY[]={0, 0, 0, 0, 0};
+int vizObjectC[]={100, 130, 180, 200, 240};
+
+float shape = 0;
 
 PImage image;
 PImage background;
@@ -20,7 +23,7 @@ void setup() {
   fill(0);
   textSize(txtSize);
   size(displayWidth, displayHeight);
-  //imgOrVec = random(2);
+  imgOrVec = (int)random(2);
   y=height-70;
 
   textSize(txtSize/2.1);
@@ -38,11 +41,17 @@ void draw() {
     x+=(width/6);
 
     if (imgOrVec == 0) {                 //visualize vector graphic
-      strokeWeight(1);
-      fill(, 100, 195, 255);
-      rectMode(CENTER);
-      rect(x+vizObjectLocX[i], y+vizObjectLocY[i], 30, 30);
-      println(newloc);
+      stroke(vizObjectC[i]-80, 20, 150, 255);
+      strokeWeight(5);
+      fill(vizObjectC[i], 50, 190, 255);
+      rectMode(CENTER); 
+      ellipseMode(CENTER);
+      shapeMode(CENTER);
+      if (shape==0) {
+        rect(x+vizObjectLocX[i], y+vizObjectLocY[i], 30, 30);
+      } else {
+        ellipse(x+vizObjectLocX[i], y+vizObjectLocY[i], 30, 30);
+      }
     }
     if (imgOrVec == 1) {                 //visualize with png
       imageMode(CENTER);
@@ -92,10 +101,18 @@ void keyPressed() {
     }
     break;
   case '0':
+    x=-50;
+    y=height-70;
+    for (int i=0; i<5; i++) {
+      vizObjectLocX[i]=0;
+      vizObjectLocY[i]=0;
+    }
     background(255);
     fill(0);
     textSize(txtSize);
-    text("hello fools", width/2, qEdgeDist);
+    text("hello friends", width/2, qEdgeDist);
+    imgOrVec = (int)random(2);
     break;
   }
+  shape = (int)random(3);
 }

@@ -1,4 +1,3 @@
-
 /*todo
 --> pngs are not sizing proportionally, resize in photoshop to make square -Andrew
 --> some questions don't make sense with 1-5 scale -Andrew
