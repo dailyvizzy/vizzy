@@ -6,10 +6,8 @@
 --> some questions don't make sense with 1-5 scale
 --> We need at least 2 more different animations
 --> what to do with background?
---> We'll need to hide the cursor
 --> need to hook up and test arduino with buttons
 --> when questions are long they go off the screen, when short can be too small
---> DONE : add PNG option to bargraph
 --> some image scaling probably needs to happen in the bar graph
 --> need to change question once per day (automatically)
 --> screengrab needs to be saved to folder once per question right before question changes
@@ -31,6 +29,7 @@ AbstractAnimation dailyAnimation;
 void setup () {
   
   //size(1024, 768);
+  noCursor();
   fullScreen();
   smooth();
   frameRate(60);
