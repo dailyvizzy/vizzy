@@ -5,7 +5,7 @@ float txtSize = 70;
 
 String[] pngFiles; 
 float randomizer;
-float imgOrVec = 1;
+float imgOrVec = 0;
 int vizGrowth[]={0, 0, 0, 0, 0};
 int newloc;
 
@@ -38,12 +38,12 @@ void draw() {
     x+=(width/6);
 
     if (imgOrVec == 0) {                 //visualize vector graphic
-    strokeWeight(1);
-    fill(i*10, 100, 195, 255);
-    rectMode(CENTER);
-    rect(x+vizObjectLocX[i], y+vizObjectLocY[i], 30, 30);
-    println(newloc);
-     }
+      strokeWeight(1);
+      fill(, 100, 195, 255);
+      rectMode(CENTER);
+      rect(x+vizObjectLocX[i], y+vizObjectLocY[i], 30, 30);
+      println(newloc);
+    }
     if (imgOrVec == 1) {                 //visualize with png
       imageMode(CENTER);
       image(image, x+vizObjectLocX[i], y+vizObjectLocY[i], 30, 30);

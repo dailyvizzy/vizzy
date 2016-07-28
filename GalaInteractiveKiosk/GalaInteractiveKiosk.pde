@@ -1,18 +1,16 @@
 
 /*todo
---> pngs are not sizing proportionally, backup plan resize in photoshop to make square
---> some questions don't make sense with 1-5 scale
---> We need at least 2 more different animations
---> what to do with background?
+--> pngs are not sizing proportionally, resize in photoshop to make square -Andrew
+--> some questions don't make sense with 1-5 scale -Andrew
+--> We need at least 2 more different animations -Andrew and Javi
+--> collect really subtle background images - Andrew
 --> need to hook up and test arduino with buttons
---> when questions are long they go off the screen, when short can be too small
---> some image scaling probably needs to happen in the bar graph
---> need to change question once per day (automatically)
---> screengrab needs to be saved to folder once per question right before question changes
+--> when questions are long they go off the screen, when short can be too small -Javi
+--> need to change question once per day (automatically) - Question for group
+--> screengrab needs to be saved to folder once per question right before question changes - Question for group
+--> White strip to seee question - Javi
 
-Questions:
---> Trails or not on bar graph images?
---> Do we want question to always be on top of image?
+Stretch:
 --> do we want to slightly animate the PNGs?
 */
 
