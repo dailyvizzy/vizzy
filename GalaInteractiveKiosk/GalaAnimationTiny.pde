@@ -10,13 +10,14 @@ class GalaAnimationTiny extends AbstractAnimation {
   int vizObjectLocY[]={0, 0, 0, 0, 0};
   int vizObjectC[]={100, 130, 180, 200, 240};
 
-  GalaAnimation(PApplet app) {
+  GalaAnimationTiny(PApplet app) {
     super(app);
   } 
 
   public void setup() {
     super.setup();
     background(255);
+    y=height-70;
   }
 
   public void update() {
@@ -37,7 +38,6 @@ class GalaAnimationTiny extends AbstractAnimation {
         fill(vizObjectC[i], 50, 190, 255);
         rectMode(CENTER);
         rect(x+vizObjectLocX[i], y+vizObjectLocY[i], 30, 30);
-        println(newloc);
       }
       if (imgOrVec == 1) {                 //visualize with png
         imageMode(CENTER);
@@ -100,3 +100,4 @@ class GalaAnimationTiny extends AbstractAnimation {
       break;
     }
   }
+}

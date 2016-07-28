@@ -1,22 +1,23 @@
 class AnimationsManager {
 
   PApplet app;
-  
+
   ArrayList<AbstractAnimation> anims;
   AbstractAnimation currentAnim;
 
   int animIndex = 0;
-  
+
   AnimationsManager(PApplet app) {
     this.app = app;
   } 
 
   void initAnimations () {
-   
+
     anims = new ArrayList<AbstractAnimation>();
     anims.add( new GalaAnimation(app));
     anims.add( new GalaAnimationBar(app));
-    
+    anims.add( new GalaAnimationTiny(app));
+
     //setAnimation((int)random(anims.size()));
     //currentAnim = anims.get(animIndex);
   }
@@ -27,14 +28,13 @@ class AnimationsManager {
     currentAnim = anims.get(animIndex);
   }
 
- AbstractAnimation getRandomAnimation(){
-   int random = (int)random(anims.size());
-   setAnimation(random);
-   return currentAnim;
- }
-  
+  AbstractAnimation getRandomAnimation() {
+    int random = (int)random(anims.size());
+    setAnimation(random);
+    return currentAnim;
+  }
+
   void keyPressed(int key) { 
     currentAnim.keyPressed(key);
   }
-  
 }
