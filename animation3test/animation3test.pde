@@ -1,90 +1,101 @@
-private float x=0; 
-private float y=0;   //general x and y
-private float qEdgeDist = 150;  //y value for question
-private float txtSize = 70;
-private float rectHeight=10;    //used for rect height
-private float rectWide=220;    //used for rect height
+float x=0; 
+float y;   //general x and y
+float qEdgeDist = 150;  //y value for question
+float txtSize = 70;
 
-String[] pngFiles;
-String[] backFiles;
-String pngPath; 
+String[] pngFiles; 
 float randomizer;
-int imgOrVec = 0;
+float imgOrVec = 1;
 int vizGrowth[]={0, 0, 0, 0, 0};
-int vizObjectsColor[]={10, 60, 120, 160, 200};
+int newloc;
+
+int vizObjectLocX[]={0, 0, 0, 0, 0};
+int vizObjectLocY[]={0, 0, 0, 0, 0};
 
 PImage image;
 PImage background;
 
-public void setup() {
+void setup() {
   background(255);
   fill(0);
   textSize(txtSize);
+  size(displayWidth, displayHeight);
+  //imgOrVec = random(2);
+  y=height-70;
 
   textSize(txtSize/2.1);
   background(255);
 
-  randomizer = random((int)pngFiles.length);
-  PImage png = loadImage(pngPath + "/" + pngFiles[(int)randomizer]);
+  image = loadImage("images/1.png");
 }
 
-public void update() {
-}
 
-public void draw() {
-
-  y=height;
-  x=0;
+void draw() {
+  x=-50;
 
   for (int i=0; i<5; i++) 
   {
-    x+=width/6;
+    x+=(width/6);
 
     if (imgOrVec == 0) {                 //visualize vector graphic
-      strokeWeight(3);
-      fill(vizObjectsColor[i], vizObjectsColor[4-i], 195, 30);
-      rectMode(CENTER);
-      rect(x, y, 230, vizGrowth[i]);
-    }
+    strokeWeight(1);
+    fill(i*10, 100, 195, 255);
+    rectMode(CENTER);
+    rect(x+vizObjectLocX[i], y+vizObjectLocY[i], 30, 30);
+    println(newloc);
+     }
     if (imgOrVec == 1) {                 //visualize with png
       imageMode(CENTER);
-      fill(vizObjectsColor[i], 195, vizObjectsColor[4-i], 30);
-      image(image, x, y+vizGrowth[i], image.width, image.height);
+      image(image, x+vizObjectLocX[i], y+vizObjectLocY[i], 30, 30);
     }
-    fill(0);
   }
   fill(0);
-  text("hello fools", width/2, qEdgeDist);
+  text("hello friends", width/2, qEdgeDist);
 }
 
-public void keyPressed(int key) {
-  float grow = 20;
+void keyPressed() {
 
   switch(key) {
   case '1': 
-    vizGrowth[0]-=grow;
+    vizObjectLocX[0]+=35;
+    if (vizObjectLocX[0]>150) {
+      vizObjectLocX[0]=0;
+      vizObjectLocY[0]-=35;
+    }
     break;
-  case '2': 
-    vizGrowth[1]-=grow;
+  case '2':
+    vizObjectLocX[1]+=35;
+    if (vizObjectLocX[1]>150) {
+      vizObjectLocX[1]=0;
+      vizObjectLocY[1]-=35;
+    }
     break;
-  case '3': 
-    vizGrowth[2]-=grow;
+  case '3':
+    vizObjectLocX[2]+=35;
+    if (vizObjectLocX[2]>150) {
+      vizObjectLocX[2]=0;
+      vizObjectLocY[2]-=35;
+    }
     break;
   case '4': 
-    vizGrowth[3]-=grow;
+    vizObjectLocX[3]+=35;
+    if (vizObjectLocX[3]>150) {
+      vizObjectLocX[3]=0;
+      vizObjectLocY[3]-=35;
+    }
     break;
   case '5': 
-    vizGrowth[4]-=grow;
+    vizObjectLocX[4]+=35;
+    if (vizObjectLocX[4]>150) {
+      vizObjectLocX[4]=0;
+      vizObjectLocY[4]-=35;
+    }
     break;
   case '0':
     background(255);
-    for (int i=0; i<5; i++) {
-      vizGrowth[i]=0;
-    }
     fill(0);
     textSize(txtSize);
     text("hello fools", width/2, qEdgeDist);
-    x=0;
     break;
   }
 }
