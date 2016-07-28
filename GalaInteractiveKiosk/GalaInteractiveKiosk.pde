@@ -1,7 +1,5 @@
 
 /*todo
---> .DS_Store file is showing up as font sometimes, causes error
---> .DS_Store file is also showing up in images file, causes error
 --> pngs are not sizing proportionally, backup plan resize in photoshop to make square
 --> some questions don't make sense with 1-5 scale
 --> We need at least 2 more different animations
