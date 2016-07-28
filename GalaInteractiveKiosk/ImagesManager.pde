@@ -28,18 +28,41 @@ class ImagesManager {
   } 
   
   PImage getRandomPNG(){
+    String imageName;
+    
     if (pngFiles.length > 0) {
+      
       randomizer = random((int)pngFiles.length);
-      PImage png = loadImage(pngPath + "/" + pngFiles[(int)randomizer]);
+      imageName = pngFiles[(int)randomizer];
+       
+      if (imageName.equals(".DS_Store")){
+        randomizer = random((int)pngFiles.length);
+        imageName = pngFiles[(int)randomizer];
+        println("IMAGE .DS_STORE SKIPPED!!!!");
+      }
+      
+      PImage png = loadImage(pngPath + "/" + imageName);
+      println("currentPNG" + " " + imageName);
       return png;
     } else return null;
     
   }
   
    PImage getRandomBack(){
+      String imageName;
+      
     if (backFiles.length > 0) {
+      
       randomizer = random((int)backFiles.length);
-      PImage back = loadImage(backPath +  "/" + backFiles[(int)randomizer]);
+      imageName = backFiles[(int)randomizer];
+      
+      if (imageName.equals(".DS_Store")){
+        randomizer = random((int)backFiles.length);
+        imageName = backFiles[(int)randomizer];
+      }
+        
+      PImage back = loadImage(backPath +  "/" + imageName );
+       println("currentBack" + " " + imageName);
       return back;
     } else return null;
     
