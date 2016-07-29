@@ -23,7 +23,14 @@ class GalaAnimationTiny extends AbstractAnimation {
   public void setup() {
     super.setup();
     background(255);
+    x=0;
     y=height-40;
+    strokeWeight(8);
+    stroke(0, 30);
+    for (int i=0; i<5; i++) {
+      x+=(width/5);
+      line(x, 0, x, height);
+    }
   }
 
   public void update() {
