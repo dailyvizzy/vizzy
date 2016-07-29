@@ -1,13 +1,13 @@
 /*todo
---> pngs are not sizing proportionally, resize in photoshop to make square -Andrew
+--> DONE: pngs are not sizing proportionally, resize in photoshop to make square -Andrew
 --> some questions don't make sense with 1-5 scale -Andrew
---> We need at least 2 more different animations -Andrew and Javi
+--> We need at least 2 more different animations -Andrew and Javi   --> one with sine waves that change amplitude
 --> collect really subtle background images - Andrew
 --> need to hook up and test arduino with buttons
 --> when questions are long they go off the screen, when short can be too small -Javi
 --> need to change question once per day (automatically) - Question for group
 --> screengrab needs to be saved to folder once per question right before question changes - Question for group
---> White strip to seee question - Javi
+--> White strip to see text question - Javi
 
 Stretch:
 --> do we want to slightly animate the PNGs?

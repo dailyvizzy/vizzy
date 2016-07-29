@@ -23,6 +23,7 @@ class GalaAnimationTiny extends AbstractAnimation {
   public void setup() {
     super.setup();
     background(255);
+    textSize(txtSize);
     x=0;
     y=height-40;
     strokeWeight(8);
