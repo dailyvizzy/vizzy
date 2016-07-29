@@ -22,6 +22,7 @@ class GalaAnimationTiny extends AbstractAnimation {
 
   public void setup() {
     super.setup();
+    textFont(font);
     background(255);
     textSize(txtSize);
     x=0;
@@ -113,6 +114,7 @@ class GalaAnimationTiny extends AbstractAnimation {
       }
       break;
     case '0':
+      saveFrame("saved_daily_images/GALAdaily_"+timestamp()+".png");
       x=-50;
       y=height-40;
       for (int i=0; i<5; i++) {
@@ -120,6 +122,7 @@ class GalaAnimationTiny extends AbstractAnimation {
         vizObjectLocY[i]=0;
         grad[i]=gradReset[i];
       }
+
       background(255);
       fill(0);
       textSize(txtSize);

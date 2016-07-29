@@ -1,3 +1,5 @@
+import java.util.Calendar;
+
 PImage img;  // Declare variable of type PImage
 int randImg;
 
@@ -44,6 +46,12 @@ void draw() {
   text("don't be a fool", displayWidth/2-200, displayHeight/2);
   text("stay in school!", displayWidth/2-200, displayHeight/2+200);
   while (second()%2==0) {                         //change fonts every 2 seconds
-    saveFrame("gala_daily_viz-#######.png");
+    saveFrame("GALAdaily_"+timestamp()+".png");
   }
+}
+
+String timestamp() {
+  Calendar now = Calendar.getInstance();
+  return String.format("%1$th-%1$td-%1$ty_%1$tH%1$tM", now);
+  
 }

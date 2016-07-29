@@ -27,9 +27,8 @@ class GalaAnimation extends AbstractAnimation {
 
   public void draw() {
     super.draw();
-    background.width = w;
-    
-    background(background);
+    //background(background);
+    background(255);
     textFont(font);
     textSize(txtSize);
     fill(0);
@@ -99,7 +98,7 @@ class GalaAnimation extends AbstractAnimation {
       tally[4]++;
       break;
     case '0':                    //clear animation and provide new question
-      background(255);
+      saveFrame("saved_daily_images/GALAdaily_"+timestamp()+".png");
       for (int i=0; i<5; i++) {
         vizObjectsCir[i]=0;
         tally[i]=0;
@@ -107,6 +106,7 @@ class GalaAnimation extends AbstractAnimation {
       textSize(txtSize);
       text(question, width/2, qEdgeDist);
       x=0;
+      background(255);
       break;
     }
   }

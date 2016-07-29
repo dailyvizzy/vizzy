@@ -38,7 +38,7 @@ class GalaAnimationBar extends AbstractAnimation {
       x+=width/6;
 
       if (imgOrVec == 0) {                 //visualize vector graphic
-        strokeWeight(3);
+        strokeWeight(2);
         fill(vizObjectsColor[i], vizObjectsColor[4-i], 195, 30);
         stroke(0);
         rectMode(CENTER);
@@ -46,19 +46,20 @@ class GalaAnimationBar extends AbstractAnimation {
         if (tally[i]>0) {
           fill(255, 60);
           stroke(0);
-          ellipse(x, height-65, 100, 100);
+          ellipse(x, height-60, 90, 90);
           fill(0);
           text(tally[i], x, height-70);
         }
       }
       if (imgOrVec == 1) {                 //visualize with png
+        strokeWeight(2);
         imageMode(CENTER);
         fill(vizObjectsColor[i], 195, vizObjectsColor[4-i], 30);
         image(image, x, y+vizGrowth[i], image.width/2.5, image.height/2.5);
         if (tally[i]>0) {
           fill(255, 60);
           stroke(0);
-          ellipse(x, height-65, 100, 100);
+          ellipse(x, height-60, 90, 90);
           fill(0);
           text(tally[i], x, height-70);
         }
@@ -94,7 +95,8 @@ class GalaAnimationBar extends AbstractAnimation {
       tally[4]++;
       break;
     case '0':
-      background(255);
+      saveFrame("saved_daily_images/GALAdaily_"+timestamp()+".png");
+      
       for (int i=0; i<5; i++) {
         vizGrowth[i]=0;
         tally[i]=0;
@@ -102,6 +104,7 @@ class GalaAnimationBar extends AbstractAnimation {
       fill(0);
       textSize(txtSize);
       text(question, width/2, qEdgeDist);
+      background(255);
       x=0;
       break;
     }
