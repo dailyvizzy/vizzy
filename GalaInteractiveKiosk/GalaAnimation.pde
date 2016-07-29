@@ -27,7 +27,9 @@ class GalaAnimation extends AbstractAnimation {
 
   public void draw() {
     super.draw();
-    background(255);
+    background.width = w;
+    
+    background(background);
     textFont(font);
     textSize(txtSize);
     fill(0);
@@ -60,7 +62,7 @@ class GalaAnimation extends AbstractAnimation {
         if (tally[i]>0) {
           strokeWeight(3);
           stroke(1);
-          ellipse(x, y, vizObjectsCir[i]+7, vizObjectsCir[i]+7);
+          //ellipse(x, y, vizObjectsCir[i]+7, vizObjectsCir[i]+7);
           image(image, x, y, vizObjectsCir[i], vizObjectsCir[i]);
           fill(0);
           textSize(txtSize/2);

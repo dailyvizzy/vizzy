@@ -49,7 +49,7 @@ class ImagesManager {
   }
   
    PImage getRandomBack(){
-      String imageName;
+    String imageName;
       
     if (backFiles.length > 0) {
       
