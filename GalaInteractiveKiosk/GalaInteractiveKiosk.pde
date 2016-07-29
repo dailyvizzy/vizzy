@@ -1,7 +1,7 @@
 /*todo
 --> DONE: pngs are not sizing proportionally, resize in photoshop to make square -Andrew
 --> some questions don't make sense with 1-5 scale -Andrew
---> We need at least 2 more different animations -Andrew and Javi   --> one with sine waves that change amplitude
+--> We need at least 2 more different animations -Andrew and Javi   --> one with sine waves that change amplitude -->could one be a series of spirals?
 --> collect really subtle background images - Andrew
 --> need to hook up and test arduino with buttons
 --> when questions are long they go off the screen, when short can be too small -Javi
