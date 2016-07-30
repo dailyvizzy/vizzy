@@ -33,10 +33,6 @@ class GalaAnimation extends AbstractAnimation {
     textSize(txtSize);
     fill(0);
 
-
-    //println(textWidth(question));
-    text(question, width/2, qEdgeDist);
-
     y=height/2;
     x=0;
 
@@ -70,6 +66,8 @@ class GalaAnimation extends AbstractAnimation {
         }
       }
       fill(0);
+      textSize(txtSize);
+      text(question, width/2, qEdgeDist);
     }
   }
 
