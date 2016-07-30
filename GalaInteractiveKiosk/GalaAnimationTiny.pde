@@ -13,6 +13,7 @@ class GalaAnimationTiny extends AbstractAnimation {
   float grad[]={20, 50, 70, 90, 100};
   float gradReset[]={20, 50, 70, 90, 100};
   float shape[]={0, 0, 0, 0, 0};
+  int tally[]={0, 0, 0, 0, 0};
 
 
 
@@ -69,6 +70,7 @@ class GalaAnimationTiny extends AbstractAnimation {
   public void keyPressed(int key) {
     switch(key) {
     case '1': 
+      tally[0]++;
       shape[0] = (int)random(3);
       vizObjectLocX[0]+=objSize;
       if (vizObjectLocX[0]>(objSize*4)) {
@@ -78,6 +80,7 @@ class GalaAnimationTiny extends AbstractAnimation {
       }
       break;
     case '2':
+      tally[1]++;
       shape[1] = (int)random(3);
       vizObjectLocX[1]+=objSize;
       if (vizObjectLocX[1]>(objSize*4)) {
@@ -87,6 +90,7 @@ class GalaAnimationTiny extends AbstractAnimation {
       }
       break;
     case '3':
+      tally[2]++;
       shape[2] = (int)random(3);
       vizObjectLocX[2]+=objSize;
       if (vizObjectLocX[2]>(objSize*4)) {
@@ -96,6 +100,7 @@ class GalaAnimationTiny extends AbstractAnimation {
       }
       break;
     case '4': 
+      tally[3]++;
       shape[3] = (int)random(3);
       vizObjectLocX[3]+=objSize;
       if (vizObjectLocX[3]>(objSize*4)) {
@@ -105,6 +110,7 @@ class GalaAnimationTiny extends AbstractAnimation {
       }
       break;
     case '5': 
+      tally[4]++;
       shape[4] = (int)random(3);
       vizObjectLocX[4]+=objSize;
       if (vizObjectLocX[4]>(objSize*4)) {
@@ -114,12 +120,15 @@ class GalaAnimationTiny extends AbstractAnimation {
       }
       break;
     case '0':
-      saveFrame("saved_daily_images/GALAdaily_"+timestamp()+".png");
+      if (tally[0]>0 || tally[1]>0 || tally[2]>0 || tally[3]>0 || tally[4]>0) {
+        saveFrame("saved_daily_images/GALAdaily_"+timestamp()+".png");
+      }
       x=-50;
       y=height-40;
       for (int i=0; i<5; i++) {
         vizObjectLocX[i]=0;
         vizObjectLocY[i]=0;
+        tally[i]=0;
         grad[i]=gradReset[i];
       }
 

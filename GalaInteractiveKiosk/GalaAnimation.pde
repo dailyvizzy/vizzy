@@ -98,7 +98,9 @@ class GalaAnimation extends AbstractAnimation {
       tally[4]++;
       break;
     case '0':                    //clear animation and provide new question
-      saveFrame("saved_daily_images/GALAdaily_"+timestamp()+".png");
+      if (tally[0]>0 || tally[1]>0 || tally[2]>0 || tally[3]>0 || tally[4]>0) {
+        saveFrame("saved_daily_images/GALAdaily_"+timestamp()+".png");
+      }
       for (int i=0; i<5; i++) {
         vizObjectsCir[i]=0;
         tally[i]=0;
