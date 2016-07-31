@@ -1,8 +1,8 @@
 /*todo
- --> We need at least 2 more different animations -Andrew and Javi   --> one with sine waves that change amplitude -->could one be a series of spirals?
+ --> We need at least 2 more different animations -Andrew and Javi   --> one with sine waves that change amplitude -->could one be a series of spirals?  -- make lines that shoot out in dif directions -- perlin noise splatter patterns
  --> collect really subtle background images? - Andrew and Javi
  --> need to hook up and test arduino with buttons
- --> screengrab needs to be saved to folder once per question right before question changes --Andrew
+ --> individual animations code could be cleaned up 
  --> White strip to see text question - Javi
  
  Stretch:
