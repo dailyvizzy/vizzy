@@ -17,6 +17,7 @@ class AnimationsManager {
     anims.add( new GalaAnimation(app));
     anims.add( new GalaAnimationBar(app));
     anims.add( new GalaAnimationTiny(app));
+    anims.add( new GalaAnimationAntenna(app));
 
     //setAnimation((int)random(anims.size()));
     //currentAnim = anims.get(animIndex);
