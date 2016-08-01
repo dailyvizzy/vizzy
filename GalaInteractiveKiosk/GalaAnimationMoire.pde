@@ -99,7 +99,7 @@ class GalaAnimationMoire extends AbstractAnimation {
       break;
     case '0':                    //clear animation and provide new question
       if (tally[0]>0 || tally[1]>0 || tally[2]>0 || tally[3]>0 || tally[4]>0) {
-        //saveFrame("saved_daily_images/GALAdaily_"+timestamp()+".png");
+        saveFrame("saved_daily_images/GALAdaily_"+timestamp()+".png");
       }
       for (int i=0; i<5; i++) {
         totalPoly[i]=0;
