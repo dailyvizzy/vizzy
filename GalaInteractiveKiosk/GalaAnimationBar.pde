@@ -46,9 +46,9 @@ class GalaAnimationBar extends AbstractAnimation {
         if (tally[i]>0) {
           fill(255, 60);
           stroke(0);
-          ellipse(x, height-62, 50, 50);
+          ellipse(x, height-65, 40, 40);
           fill(0);
-          textSize(txtSize/2);
+          textSize(txtSize/2.5);
           text(tally[i], x, height-70);
         }
       }
@@ -60,9 +60,9 @@ class GalaAnimationBar extends AbstractAnimation {
         if (tally[i]>0) {
           fill(255, 60);
           stroke(0);
-          ellipse(x, height-62, 50, 50);
+          ellipse(x, height-65, 40, 40);
           fill(0);
-          textSize(txtSize/2);
+          textSize(txtSize/2.5);
           text(tally[i], x, height-70);
         }
       }
@@ -98,7 +98,7 @@ class GalaAnimationBar extends AbstractAnimation {
       break;
     case '0':
       if (tally[0]>0 || tally[1]>0 || tally[2]>0 || tally[3]>0 || tally[4]>0) {
-        saveFrame("saved_daily_images/GALAdaily_"+timestamp()+".png");
+         super.saveVizImg();
       }
       for (int i=0; i<5; i++) {
         vizGrowth[i]=0;

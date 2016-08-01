@@ -98,7 +98,7 @@ class GalaAnimationAntenna extends AbstractAnimation {
       break;
     case '0':                    //clear animation and provide new question
       if (tally[0]>0 || tally[1]>0 || tally[2]>0 || tally[3]>0 || tally[4]>0) {
-        saveFrame("saved_daily_images/GALAdaily_"+timestamp()+".png");
+         super.saveVizImg();
       }
       for (int i=0; i<5; i++) {
         tally[i]=0;

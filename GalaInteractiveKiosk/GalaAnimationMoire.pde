@@ -36,12 +36,12 @@ class GalaAnimationMoire extends AbstractAnimation {
     background(255);
     textFont(font);
     textSize(txtSize);
-    x=100;
+    x=0;
     background(255, 255, 190);
 
     for (int i=0; i<5; i++) 
     {
-      x+=(width/7);
+      x+=(width/6);
       nodeLocX[i]=x;
       nodeLocY[i]=height/2;
       pushMatrix();
@@ -55,10 +55,10 @@ class GalaAnimationMoire extends AbstractAnimation {
       }
       popMatrix();
     }
-    x=100;
+    x=0;
     for (int i=0; i<5; i++) 
     {
-      x+=(width/7);
+      x+=(width/6);
       nodeLocX[i]=x;
       textSize(txtSize/5);
       if (tally[i]>0) {
@@ -99,7 +99,7 @@ class GalaAnimationMoire extends AbstractAnimation {
       break;
     case '0':                    //clear animation and provide new question
       if (tally[0]>0 || tally[1]>0 || tally[2]>0 || tally[3]>0 || tally[4]>0) {
-        saveFrame("saved_daily_images/GALAdaily_"+timestamp()+".png");
+        saveVizImg();
       }
       for (int i=0; i<5; i++) {
         totalPoly[i]=0;

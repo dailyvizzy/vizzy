@@ -122,7 +122,7 @@ class GalaAnimationTiny extends AbstractAnimation {
       break;
     case '0':
       if (tally[0]>0 || tally[1]>0 || tally[2]>0 || tally[3]>0 || tally[4]>0) {
-        saveFrame("saved_daily_images/GALAdaily_"+timestamp()+".png");
+         super.saveVizImg();
       }
       x=-50;
       y=height-40;

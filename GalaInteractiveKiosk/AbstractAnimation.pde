@@ -47,4 +47,7 @@ public class AbstractAnimation {
     Calendar now = Calendar.getInstance();
     return String.format("%1$th-%1$td-%1$ty_%1$tH%1$tM%1$tS", now);
   }
+  void saveVizImg() {
+    saveFrame("/Users/gala/Dropbox/saved_daily_images/GALAdaily_"+timestamp()+".png");
+  }
 }
