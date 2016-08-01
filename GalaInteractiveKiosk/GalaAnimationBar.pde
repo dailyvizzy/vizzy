@@ -46,8 +46,9 @@ class GalaAnimationBar extends AbstractAnimation {
         if (tally[i]>0) {
           fill(255, 60);
           stroke(0);
-          ellipse(x, height-60, 90, 90);
+          ellipse(x, height-62, 50, 50);
           fill(0);
+          textSize(txtSize/2);
           text(tally[i], x, height-70);
         }
       }
@@ -59,14 +60,15 @@ class GalaAnimationBar extends AbstractAnimation {
         if (tally[i]>0) {
           fill(255, 60);
           stroke(0);
-          ellipse(x, height-60, 90, 90);
+          ellipse(x, height-62, 50, 50);
           fill(0);
+          textSize(txtSize/2);
           text(tally[i], x, height-70);
         }
       }
-      fill(0);
     }
     fill(0);
+    textSize(txtSize);
     text(question, width/2, qEdgeDist);
   }
 

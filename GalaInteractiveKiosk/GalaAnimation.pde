@@ -46,7 +46,7 @@ class GalaAnimation extends AbstractAnimation {
         fill(vizObjectsColor[i], 195, vizObjectsColor[4-i], 150);
         ellipse(x, y, vizObjectsCir[i], vizObjectsCir[i]);
         fill(0);
-        textSize(txtSize/2);
+        textSize(txtSize/3);
         if (tally[i]>0) {
           text(tally[i], x, (y+15)+(vizObjectsCir[i]/2));
         }
@@ -60,7 +60,7 @@ class GalaAnimation extends AbstractAnimation {
           //ellipse(x, y, vizObjectsCir[i]+7, vizObjectsCir[i]+7);
           image(image, x, y, vizObjectsCir[i], vizObjectsCir[i]);
           fill(0);
-          textSize(txtSize/2);
+          textSize(txtSize/3);
 
           text(tally[i], x, (y+15)+(vizObjectsCir[i]/2));
         }

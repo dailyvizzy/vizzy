@@ -38,11 +38,12 @@ class GalaAnimationTiny extends AbstractAnimation {
 
   public void draw() {
     super.draw();
-    x=-240;
+    
+    x=-100;
 
     for (int i=0; i<5; i++) 
     {
-      x+=(width/5);
+      x+=(width/6);
 
       if (imgOrVec == 0) {                 //visualize vector graphic
         stroke(vizObjectC[i]-80, 20, 150, 255);
