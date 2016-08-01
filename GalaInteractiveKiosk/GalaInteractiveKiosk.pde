@@ -4,7 +4,7 @@
  --> need to hook up and test arduino with buttons
  --> individual animations code could be cleaned up 
  --> White strip to see text question - Javi
-
+*/
 import java.util.Calendar;
 
 AnimationsManager animationsManager;
