@@ -21,7 +21,6 @@ AbstractAnimation dailyAnimation;
 
 void setup () {
 
-  //size(1024, 768);
   noCursor();
   fullScreen();
   smooth();

@@ -51,7 +51,7 @@ class GalaAnimationAntenna extends AbstractAnimation {
       fill(vizObjectsColor[4-i], vizObjectsColor[i], 170, 255);
       textSize(txtSize/2);
       if (tally[i]>0) {
-        text(tally[i], x, nodeLocY[i]);
+        text(tally[i], x, nodeLocY[i]-2);
       }
     }
   }
