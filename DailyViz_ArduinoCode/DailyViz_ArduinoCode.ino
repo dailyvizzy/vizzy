@@ -27,25 +27,25 @@ void setup() { // initialize the buttons' inputs:
 }
 
 void loop() {
-    // use the pushbuttons to control the keyboard:
-    if (digitalRead(one) == HIGH) {
-      Keyboard.write('a');
-      Serial.print("hello");
-    }
-    if (digitalRead(two) == HIGH) {
-      Keyboard.write('2');
-    }
-    if (digitalRead(three) == HIGH) {
-      Keyboard.write('3');
-    }
-    if (digitalRead(four) == HIGH) {
-      Keyboard.write('4');
-    }
-    if (digitalRead(five) == HIGH) {
-      Keyboard.write('5');
-    }
-    if (digitalRead(reset) == HIGH) {
-      Keyboard.write('0');
-    }
+  // use the pushbuttons to control the keyboard:
+  if (digitalRead(one) == HIGH) {
+    Keyboard.write('1');
+    Serial.print("hello");
+  }
+  if (digitalRead(two) == HIGH) {
+    Keyboard.write('2');
+  }
+  if (digitalRead(three) == HIGH) {
+    Keyboard.write('3');
+  }
+  if (digitalRead(four) == HIGH) {
+    Keyboard.write('4');
+  }
+  if (digitalRead(five) == HIGH) {
+    Keyboard.write('5');
+  }
+  if (digitalRead(reset) == HIGH) {
+    Keyboard.write('0');
+  }
 }
 
