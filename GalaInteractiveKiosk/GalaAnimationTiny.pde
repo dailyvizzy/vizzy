@@ -136,7 +136,7 @@ class GalaAnimationTiny extends AbstractAnimation {
       background(255);
       fill(0);
       textSize(txtSize);
-      text("hello friends", width/2, qEdgeDist);
+      text(question, width/2, qEdgeDist);
       imgOrVec = (int)random(2);
       break;
     }
