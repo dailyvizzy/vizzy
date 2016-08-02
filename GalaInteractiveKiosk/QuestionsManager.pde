@@ -6,8 +6,8 @@ class QuestionsManager {
   String movingQuestion; //represents moving question
   
   QuestionsManager() { 
-    //table = loadTable("data/questions/Gala_CSV_Questions.csv");
-    table = loadTable("/Users/gala/Dropbox/Gala_CSV_Questions.csv"); 
+    table = loadTable("data/questions/Gala_CSV_Questions.csv");
+    //table = loadTable("/Users/gala/Dropbox/Gala_CSV_Questions.csv"); 
   } 
   
   private void loadQuestion() {
