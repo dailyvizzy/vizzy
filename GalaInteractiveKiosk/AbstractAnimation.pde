@@ -1,3 +1,5 @@
+int big = 0;
+
 public class AbstractAnimation {
 
   PApplet app;
@@ -80,5 +82,17 @@ void boxy() {
       fill(random(200, 255), random(200, 255), 255, 50);
       rect(i, j, 100, 100);
     }
+  }
+}
+
+void falling() {
+}
+
+void diagonals() {
+  noFill();
+  strokeWeight(20);
+  stroke(200, 170, 10, 40);
+  for (int i=-width; i<width; i+=random(20, 25)) {
+    line(0+i, 0, width+i, height);
   }
 }

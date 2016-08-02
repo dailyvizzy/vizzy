@@ -40,6 +40,7 @@ class GalaAnimationTiny extends AbstractAnimation {
     super.draw();
     
     x=-100;
+    falling();
 
     for (int i=0; i<5; i++) 
     {

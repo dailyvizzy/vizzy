@@ -32,12 +32,12 @@ class GalaAnimationMoire extends AbstractAnimation {
 
   public void draw() {
     super.draw();
-    //background(background);
     background(255);
     textFont(font);
     textSize(txtSize);
     x=0;
     background(255, 255, 190);
+    diagonals();
 
     for (int i=0; i<5; i++) 
     {
