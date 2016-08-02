@@ -30,12 +30,12 @@ void setup() {
   textSize(txtSize/2.1);
   background(255);
 
-  for(int i = 0; i<100; i++){
-    randomCir = random(10,150);
-    noStroke();
-    fill(random(200,255),random(200,255),255,50);
-    ellipse(random(width),random(height), randomCir, randomCir);
-  }
+  //for(int i = 0; i<100; i++){
+  //  randomCir = random(10,150);
+  //  noStroke();
+  //  fill(random(200,255),random(200,255),255,50);
+  //  ellipse(random(width),random(height), randomCir, randomCir);
+  //}
 
   //for (int j = 0; j<height; j+=20) {
   //  for (int i = 0; i<width; i+=20) {
@@ -44,6 +44,15 @@ void setup() {
   //    ellipse(i, j, 5, 5);
   //  }
   //}
+
+
+  for (int j = 0; j<height; j+=100) {
+    for (int i = 0; i<width; i+=100) {
+      noStroke();
+      fill(random(200,255), random(200,255), 0, 50);
+      rect(i, j, 100, 100);
+    }
+  }
 
 
 
