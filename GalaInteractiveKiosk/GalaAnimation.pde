@@ -29,6 +29,7 @@ class GalaAnimation extends AbstractAnimation {
     super.draw();
     //background(background);
     background(255);
+    dots();
     textFont(font);
     textSize(txtSize);
     fill(0);

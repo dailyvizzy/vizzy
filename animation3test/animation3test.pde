@@ -8,6 +8,7 @@ float randomizer;
 float imgOrVec = 0;
 int vizGrowth[]={0, 0, 0, 0, 0};
 int newloc;
+float randomCir = 0;
 
 int vizObjectLocX[]={0, 0, 0, 0, 0};
 int vizObjectLocY[]={0, 0, 0, 0, 0};
@@ -28,6 +29,23 @@ void setup() {
 
   textSize(txtSize/2.1);
   background(255);
+
+  for(int i = 0; i<100; i++){
+    randomCir = random(10,150);
+    noStroke();
+    fill(random(200,255),random(200,255),255,50);
+    ellipse(random(width),random(height), randomCir, randomCir);
+  }
+
+  //for (int j = 0; j<height; j+=20) {
+  //  for (int i = 0; i<width; i+=20) {
+  //    noStroke();
+  //    fill(255, 0, 0, 50);
+  //    ellipse(i, j, 5, 5);
+  //  }
+  //}
+
+
 
   image = loadImage("images/1.png");
 }

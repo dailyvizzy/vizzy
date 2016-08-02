@@ -21,6 +21,7 @@ class GalaAnimationAntenna extends AbstractAnimation {
     super.setup();
     fullScreen();
     background(255, 240, 255);
+    splatter();
 
     for (int i=0; i<5; i++) 
     {

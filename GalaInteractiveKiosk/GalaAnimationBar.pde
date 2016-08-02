@@ -22,6 +22,7 @@ class GalaAnimationBar extends AbstractAnimation {
     fill(0);
     textSize(txtSize);
     background(255);
+    boxy();
   }
 
   public void update() {
@@ -98,7 +99,7 @@ class GalaAnimationBar extends AbstractAnimation {
       break;
     case '0':
       if (tally[0]>0 || tally[1]>0 || tally[2]>0 || tally[3]>0 || tally[4]>0) {
-         super.saveVizImg();
+        super.saveVizImg();
       }
       for (int i=0; i<5; i++) {
         vizGrowth[i]=0;
