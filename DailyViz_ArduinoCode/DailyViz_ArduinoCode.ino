@@ -11,6 +11,8 @@ const int four = 10;
 const int five = 9;
 const int reset = 8;
 
+int buttonDelay = 50;
+
 void setup() { // initialize the buttons' inputs:
   pinMode(one, INPUT);
   pinMode(two, INPUT);
@@ -21,31 +23,44 @@ void setup() { // initialize the buttons' inputs:
 
   Serial.begin(9600);
   Keyboard.begin();
-  while (!Serial) {
-    Serial.print("hello");
-  }
 }
 
 void loop() {
   // use the pushbuttons to control the keyboard:
   if (digitalRead(one) == HIGH) {
-    Keyboard.write('1');
-    Serial.print("hello");
+    delay(buttonDelay);
+    if (digitalRead(one) == LOW) {
+      Keyboard.write('1');
+    }
   }
-  if (digitalRead(two) == HIGH) {
-    Keyboard.write('2');
+  else if (digitalRead(two) == HIGH) {
+    delay(buttonDelay);
+    if (digitalRead(two) == LOW) {
+      Keyboard.write('2');
+    }
   }
-  if (digitalRead(three) == HIGH) {
-    Keyboard.write('3');
+  else if (digitalRead(three) == HIGH) {
+    delay(buttonDelay);
+    if (digitalRead(three) == LOW) {
+      Keyboard.write('3');
+    }
   }
-  if (digitalRead(four) == HIGH) {
-    Keyboard.write('4');
+  else if (digitalRead(four) == HIGH) {
+    delay(buttonDelay);
+    if (digitalRead(four) == LOW) {
+      Keyboard.write('4');
+    }
   }
-  if (digitalRead(five) == HIGH) {
-    Keyboard.write('5');
+  else if (digitalRead(five) == HIGH) {
+    delay(buttonDelay);
+    if (digitalRead(five) == LOW) {
+      Keyboard.write('5');
+    }
   }
-  if (digitalRead(reset) == HIGH) {
-    Keyboard.write('0');
+  else if (digitalRead(reset) == HIGH) {
+    delay(buttonDelay);
+    if (digitalRead(reset) == LOW) {
+      Keyboard.write('0');
+    }
   }
 }
-
