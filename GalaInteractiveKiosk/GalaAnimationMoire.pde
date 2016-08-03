@@ -1,10 +1,6 @@
 class GalaAnimationMoire extends AbstractAnimation {
 
   private float x=0; 
-  private float y=0;   //general x and y
-  private float qEdgeDist = 150;  //y value for question 
-  private float txtSize = 70;
-
 
   float nodeLocX[]={0, 0, 0, 0, 0};
   float nodeLocY[]={0, 0, 0, 0, 0};
@@ -24,6 +20,7 @@ class GalaAnimationMoire extends AbstractAnimation {
       nodeLocY[i]=(height/2) + random(-100, 300);
       vizObjectsColor[i] = random(0, 255);
     }
+    renderText();
   }
 
   public void update() {
@@ -33,12 +30,9 @@ class GalaAnimationMoire extends AbstractAnimation {
   public void draw() {
     super.draw();
     background(255);
-    textFont(font);
-    textSize(txtSize);
-    x=0;
-    background(255, 255, 190);
     diagonals();
 
+    x=0;
     for (int i=0; i<5; i++) 
     {
       x+=(width/6);
@@ -55,6 +49,7 @@ class GalaAnimationMoire extends AbstractAnimation {
       }
       popMatrix();
     }
+    
     x=0;
     for (int i=0; i<5; i++) 
     {
@@ -68,14 +63,10 @@ class GalaAnimationMoire extends AbstractAnimation {
         fill(0);
         text(tally[i], x, nodeLocY[i]);
       }
-      textSize(txtSize);
-      fill(0);
-      text(question, width/2, qEdgeDist);
+      renderText();
     }
   }
   public void keyPressed(int key) {
-    float grow = 20;
-
     switch(key) {
     case '1': 
       totalPoly[0]++;
@@ -111,10 +102,7 @@ class GalaAnimationMoire extends AbstractAnimation {
       {
         nodeLocY[i]=(height/2) + random(-100, 300);
       }
-      background(255, 240, 255);
-      fill(0);
-      textSize(txtSize);
-      text(question, width/2, qEdgeDist);
+      renderText();
       break;
     }
   }

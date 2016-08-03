@@ -1,11 +1,7 @@
 class GalaAnimationSpiral extends AbstractAnimation {
 
-  private float x=0;
-  private float y=0;
+  private float x = 0;
   float posx, posy;
-  private float cir=10;
-  private float txtSize=70;
-  private float qEdgeDist = 100;  //y value for question
   
   float spiralAngle = 0;
   float radiusSpiralDots;
@@ -17,13 +13,13 @@ class GalaAnimationSpiral extends AbstractAnimation {
   float spiralAngles[] = {0, 0, 0, 0, 0};
   
 
-
   GalaAnimationSpiral(PApplet app) {
     super(app);
   } 
 
   public void setup() {
     super.setup();
+    
     fullScreen();
     background(255, 240, 255);
 
@@ -31,10 +27,7 @@ class GalaAnimationSpiral extends AbstractAnimation {
     {
       nodeLocY[i]=(height/2);
     }
-    fill(0);
-    textSize(txtSize);
-    textFont(font);
-    text(question, width/2, qEdgeDist);
+    renderText();
   }
 
   public void update() {
@@ -43,6 +36,7 @@ class GalaAnimationSpiral extends AbstractAnimation {
 
   public void draw() {
     super.draw();
+    
     background(255, 240, 255);
     fill(0);
     
@@ -68,7 +62,6 @@ class GalaAnimationSpiral extends AbstractAnimation {
       pushMatrix();
       smooth();
       radiusSpiralDots=25;
-      //spiralAngles[0]+=0.25;
       
       stroke(vizObjectsColor[4-i], vizObjectsColor[i], 170, 255);
       strokeWeight(1);
@@ -80,8 +73,15 @@ class GalaAnimationSpiral extends AbstractAnimation {
         posx = cos(angle) * radiusSpiralDots;
         posy = sin(angle) * radiusSpiralDots;
         //point(posx, posy);
-        fill(vizObjectsColor[4-i], vizObjectsColor[i], 170, 255);
-        ellipse(posx, posy, 4, 4);
+        if (imgOrVec == 0) {
+          fill(vizObjectsColor[4-i], vizObjectsColor[i], 170, 255);
+          ellipse(posx, posy, 5, 5);
+        }
+        
+        if (imgOrVec == 1) {
+          imageMode(CENTER);
+          image(image, posx, posy, 25, 25);
+        }
       }
       
       float px = -999;
@@ -101,11 +101,7 @@ class GalaAnimationSpiral extends AbstractAnimation {
       }
       popMatrix();
     }
-     
-     fill(0);
-    textSize(txtSize);
-    textFont(font);
-    text(question, width/2, qEdgeDist);
+    renderText();
 
   }
 
@@ -113,33 +109,7 @@ class GalaAnimationSpiral extends AbstractAnimation {
     
     switch(key) {
     case '1': 
-      //radiusSpiralDots=10;
       spiralAngles[0]+=0.25;
-      //stroke(vizObjectsColor[4], vizObjectsColor[0], 170, 255);
-      //strokeWeight(5);
-      //translate(nodeLocX[0], nodeLocY[0]);
-      //for(float angle = 0; angle < spiralAngles[0]*PI; angle += .2){
-      //  radiusSpiralDots += 0.5;
-      //  x = cos(angle) * radiusSpiralDots;
-      //  y = sin(angle) * radiusSpiralDots;
-      //  point(x, y);
-      //}
-      
-      //float px = -999;
-      //float py = -999;
-      //float radiusSpiralLine = 10;
-      //stroke(vizObjectsColor[4], vizObjectsColor[0], 170, 255);
-      //strokeWeight(1);
-      //for(float angle = 0; angle < spiralAngles[0]*PI; angle += .1){
-      //  radiusSpiralLine += 0.25;
-      //  x = cos(angle) * radiusSpiralLine;
-      //  y = sin(angle) * radiusSpiralLine;
-      //  if(px > -999){
-      //    line(x, y, px, py);
-      //  }
-      //  px = x;
-      //  py = y;
-      //}
       tally[0]++;
       break;
     case '2': 
@@ -173,9 +143,7 @@ class GalaAnimationSpiral extends AbstractAnimation {
       {
         nodeLocY[i]=(height/2);
       }
-      background(255, 240, 255);
-      fill(0);
-      text(question, width/2, qEdgeDist);
+      renderText();
       break;
     }
   }

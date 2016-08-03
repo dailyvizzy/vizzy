@@ -20,9 +20,7 @@ class AnimationsManager {
     anims.add( new GalaAnimationAntenna(app));
     anims.add( new GalaAnimationMoire(app));
     anims.add( new GalaAnimationSpiral(app));
-
-    //setAnimation((int)random(anims.size()));
-    //currentAnim = anims.get(animIndex);
+    //anims.add( new GalaAnimationCircles(app));
   }
 
   void setAnimation(int index)

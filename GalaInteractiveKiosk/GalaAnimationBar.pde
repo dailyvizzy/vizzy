@@ -2,10 +2,6 @@ class GalaAnimationBar extends AbstractAnimation {
 
   private float x=0; 
   private float y=0;   //general x and y
-  private float qEdgeDist = 150;  //y value for question
-  private float txtSize = 70;
-  private float rectHeight=10;    //used for rect height
-  private float rectWide=220;    //used for rect height
 
   int vizGrowth[]={0, 0, 0, 0, 0};
   int vizObjectsColor[]={10, 60, 120, 160, 200};
@@ -18,10 +14,7 @@ class GalaAnimationBar extends AbstractAnimation {
   public void setup() {
     super.setup();
     background(255);
-    textFont(font);
-    fill(0);
-    textSize(txtSize);
-    background(255);
+    renderText();
     boxy();
   }
 
@@ -68,9 +61,7 @@ class GalaAnimationBar extends AbstractAnimation {
         }
       }
     }
-    fill(0);
-    textSize(txtSize);
-    text(question, width/2, qEdgeDist);
+    renderText();
   }
 
   public void keyPressed(int key) {
@@ -105,11 +96,8 @@ class GalaAnimationBar extends AbstractAnimation {
         vizGrowth[i]=0;
         tally[i]=0;
       }
-      fill(0);
-      textSize(txtSize);
-      text(question, width/2, qEdgeDist);
-      background(255);
-      x=0;
+    
+      renderText();
       break;
     }
   }

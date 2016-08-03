@@ -1,10 +1,6 @@
 /*todo
  --> More Animations: one with sine waves that change amplitude -->could one be a series of spirals? --> perlin noise splatter patterns
- --> collect really subtle background images? - Andrew and Javi
  --> need to hook up and test arduino with buttons
- --> individual animations code could be cleaned up 
- --> White strip to see text question - Javi
- 
  -->when exporting remember to copy data folder
 */
 import java.util.Calendar;

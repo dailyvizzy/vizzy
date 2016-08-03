@@ -1,17 +1,10 @@
 class GalaAnimationAntenna extends AbstractAnimation {
 
-  private float x=0;
-  private float y=0;
-  private float cir=10;
-  private float txtSize=70;
-  private float qEdgeDist = 100;  //y value for question 
-
+  float x=0;
   int vizObjectsColor[]={160, 120, 80, 60, 20};
   int tally[]={0, 0, 0, 0, 0};
   float nodeLocX[]={0, 0, 0, 0, 0};
   float nodeLocY[]={0, 0, 0, 0, 0};
-
-
 
   GalaAnimationAntenna(PApplet app) {
     super(app);
@@ -27,10 +20,7 @@ class GalaAnimationAntenna extends AbstractAnimation {
     {
       nodeLocY[i]=(height/2) + random(-100, 300);
     }
-    fill(0);
-    textSize(txtSize);
-    textFont(font);
-    text(question, width/2, qEdgeDist);
+    renderText();
   }
 
   public void update() {
@@ -55,6 +45,7 @@ class GalaAnimationAntenna extends AbstractAnimation {
         text(tally[i], x, nodeLocY[i]-2);
       }
     }
+    renderText();
   }
 
   public void keyPressed(int key) {
@@ -111,9 +102,7 @@ class GalaAnimationAntenna extends AbstractAnimation {
       {
         nodeLocY[i]=(height/2) + random(-100, 300);
       }
-      background(255, 240, 255);
-      fill(0);
-      text(question, width/2, qEdgeDist);
+      renderText();
       break;
     }
   }

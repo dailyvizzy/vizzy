@@ -2,8 +2,6 @@ class GalaAnimationTiny extends AbstractAnimation {
 
   private float x=0; 
   private float y=0;   //general x and y
-  private float qEdgeDist = 150;  //y value for question 
-  private float txtSize = 70;
   private float objSize = 50;
   private float objSpace = 50;
 
@@ -22,10 +20,9 @@ class GalaAnimationTiny extends AbstractAnimation {
   } 
 
   public void setup() {
-    super.setup();
-    textFont(font);
+    super.setup(); 
     background(255);
-    textSize(txtSize);
+    renderText();
     x=0;
     y=height-40;
     strokeWeight(8);
@@ -38,10 +35,9 @@ class GalaAnimationTiny extends AbstractAnimation {
 
   public void draw() {
     super.draw();
-    
+
     x=-100;
     falling();
-
     for (int i=0; i<5; i++) 
     {
       x+=(width/6);
@@ -65,8 +61,9 @@ class GalaAnimationTiny extends AbstractAnimation {
         image(image, x+vizObjectLocX[i], y+vizObjectLocY[i], objSize, objSize);
       }
     }
-    fill(0);
-    text(question, width/2, qEdgeDist);
+    //fill(0);
+    //text(question, width/2, qEdgeDist);
+    renderText();
   }
 
   public void keyPressed(int key) {
@@ -135,10 +132,11 @@ class GalaAnimationTiny extends AbstractAnimation {
       }
 
       background(255);
-      fill(0);
-      textSize(txtSize);
-      text(question, width/2, qEdgeDist);
-      imgOrVec = (int)random(2);
+      //fill(0);
+      //textSize(txtSize);
+      //text(question, width/2, qEdgeDist);
+      //imgOrVec = (int)random(2);
+      renderText();
       break;
     }
   }
