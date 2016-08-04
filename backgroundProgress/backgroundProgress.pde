@@ -1,5 +1,6 @@
 float x=0, y=0;
 float pick=0;
+boolean firsttime=true;
 
 void setup() {
   fullScreen();
@@ -7,23 +8,25 @@ void setup() {
 }
 
 void draw() {
-  strokeWeight(1);
-  stroke(0, 20, random(255));
-  fill(0, 20, random(255));
 
-  for (int col=0; col<(height+600); col+=300) {
+  if (firsttime==true || second()%10==0) {
+    firsttime=false;
+    background(255);
+    strokeWeight(2);
+    for (int col=0; col<(height+1000); col+=100) {
 
-    for (int row =0; row<(width+600); row+=300) {
-      pick = random(2);
-
-      for (int i = 0; i<=300; i+=10) {
-        line(x+row+i, y+col, x+row+i, y+300+col);
-      }
-      x+=300;
-      for (int i = 0; i<=300; i+=10) {
-        line(x+row, y+i+col, x+row+300, y+i+col);
+      for (int row =0; row<(width+1000); row+=100) {
+        stroke(random(255), 40, random(255), 30);
+        pick = (int)random(2);
+        //println(pick + " " + row + " " +col);
+        for (int i = 0; i<=100; i+=10) {
+          if (pick==1) {
+            line(row+i, col, row+i, col+100);
+          } else {
+            line(row, col+i, row+100, col+i);
+          }
+        }
       }
     }
-    x=0;
   }
 }
