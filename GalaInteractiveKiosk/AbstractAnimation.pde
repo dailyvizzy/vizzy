@@ -1,4 +1,4 @@
-int big = 0;
+float pick=0;
 
 public class AbstractAnimation {
 
@@ -13,13 +13,13 @@ public class AbstractAnimation {
   int w, h;
   float qEdgeDist = 150;  //y value for question
   int txtSize = 70;
-  
+
 
   AbstractAnimation (PApplet app) 
   {
     this.app = app;
     imgOrVec = 0;
-    
+
     size(width, height);
   }
 
@@ -53,21 +53,21 @@ public class AbstractAnimation {
     Calendar now = Calendar.getInstance();
     return String.format("%1$th-%1$td-%1$ty_%1$tH%1$tM%1$tS", now);
   }
-  
+
   void saveVizImg() {
     saveFrame("/Users/gala/Dropbox/saved_daily_images/GALAdaily_"+timestamp()+".png");
   }
 
-  void renderText(){   
-     fill(0);
-     textFont(font);
-     textSize(txtSize);
-     text(question, width/2, qEdgeDist);
+  void renderText() {   
+    fill(0);
+    textFont(font);
+    textSize(txtSize);
+    text(question, width/2, qEdgeDist);
   }
-  
+
 
   /*ANIMATE BACKGROUNDS*/
-  
+
   void dots() {
     for (int j = 0; j<height; j+=30) {
       for (int i = 0; i<width; i+=30) {
@@ -77,7 +77,7 @@ public class AbstractAnimation {
       }
     }
   }
-  
+
   void splatter() {
     float randomCir = 0;
     for (int i = 0; i<100; i++) {
@@ -87,8 +87,8 @@ public class AbstractAnimation {
       ellipse(random(width), random(height), randomCir, randomCir);
     }
   }
-  
-  
+
+
   void boxy() {
     for (int j = 0; j<(height+100); j+=100) {
       for (int i = 0; i<width; i+=100) {
@@ -98,10 +98,27 @@ public class AbstractAnimation {
       }
     }
   }
-  
-  void falling() {
+
+  void woven() {
+    background(255);
+    strokeWeight(2);
+    for (int col=0; col<(height+1000); col+=100) {
+
+      for (int row =0; row<(width+1000); row+=100) {
+        stroke(random(255), 40, random(255), 30);
+        pick = (int)random(2);
+        //println(pick + " " + row + " " +col);
+        for (int i = 0; i<=100; i+=10) {
+          if (pick==1) {
+            line(row+i, col, row+i, col+100);
+          } else {
+            line(row, col+i, row+100, col+i);
+          }
+        }
+      }
+    }
   }
-    
+
 
   void diagonals() {
     noFill();
@@ -112,21 +129,19 @@ public class AbstractAnimation {
     }
   }
   
+  int xspacing = 16; 
+  float theta = 0.0;  // Start angle at 0  
+  float amplitude = 40.0;  // Height of wave
+  float period = 400.0;  // How many pixels before the wave repeats
+  float dx;  // Value for incrementing X, a function of period and xspacing
+  float[] yvalues;  // Using an array to store height values for the wave
   
-    int xspacing = 16; 
-    float theta = 0.0;  // Start angle at 0  
-    float amplitude = 40.0;  // Height of wave
-    float period = 400.0;  // How many pixels before the wave repeats
-    float dx;  // Value for incrementing X, a function of period and xspacing
-    float[] yvalues;  // Using an array to store height values for the wave
-    
-    int ampVal[]={10,10,10,10,10};
-    int vizObjectsColor[]={10, 60, 120, 160, 200};
-    int yPositions[]={300, 450, 600, 750, 900};
+  int ampVal[]={10,10,10,10,10};
+  int vizObjectsColor[]={10, 60, 120, 160, 200};
+  int yPositions[]={300, 450, 600, 750, 900};
     
   void sineCircles() {
-    
-    
+   
     dx = (TWO_PI / period) * xspacing;
     yvalues = new float[w/xspacing];
     
@@ -167,5 +182,4 @@ public class AbstractAnimation {
         
       }
   }
-
 }

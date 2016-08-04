@@ -85,20 +85,22 @@ class GalaAnimationSpiral extends AbstractAnimation {
         }
       }
       
-      float px = -999;
-      float py = -999;
-      float radiusSpiralLine = 25;
-      stroke(vizObjectsColor[4-i], vizObjectsColor[i], 170, 255);
-      strokeWeight(2);
-      for(float angle = 0; angle < spiralAngles[i]*PI; angle += .05){
-        radiusSpiralLine += 0.25;
-        posx = cos(angle) * radiusSpiralLine;
-        posy = sin(angle) * radiusSpiralLine;
-        if(px > -999){
-          line(posx, posy, px, py);
-        }
-        px = posx;
-        py = posy;
+        if (imgOrVec == 0) {
+          float px = -999;
+          float py = -999;
+          float radiusSpiralLine = 25;
+          stroke(vizObjectsColor[4-i], vizObjectsColor[i], 170, 255);
+          strokeWeight(2);
+          for(float angle = 0; angle < spiralAngles[i]*PI; angle += .05){
+            radiusSpiralLine += 0.25;
+            posx = cos(angle) * radiusSpiralLine;
+            posy = sin(angle) * radiusSpiralLine;
+            if(px > -999){
+              line(posx, posy, px, py);
+            }
+            px = posx;
+            py = posy;
+          }
       }
       popMatrix();
     }

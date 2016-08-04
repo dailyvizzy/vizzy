@@ -27,6 +27,7 @@ class GalaAnimationTiny extends AbstractAnimation {
     y=height-40;
     strokeWeight(8);
     stroke(0, 30);
+    woven();
   }
 
   public void update() {
@@ -35,9 +36,8 @@ class GalaAnimationTiny extends AbstractAnimation {
 
   public void draw() {
     super.draw();
-
     x=-100;
-    falling();
+
     for (int i=0; i<5; i++) 
     {
       x+=(width/6);
@@ -120,7 +120,7 @@ class GalaAnimationTiny extends AbstractAnimation {
       break;
     case '0':
       if (tally[0]>0 || tally[1]>0 || tally[2]>0 || tally[3]>0 || tally[4]>0) {
-         super.saveVizImg();
+        super.saveVizImg();
       }
       x=-50;
       y=height-40;

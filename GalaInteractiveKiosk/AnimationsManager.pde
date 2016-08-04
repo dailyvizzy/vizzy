@@ -14,13 +14,13 @@ class AnimationsManager {
   void initAnimations () {
 
     anims = new ArrayList<AbstractAnimation>();
-    anims.add( new GalaAnimation(app));
+    anims.add( new GalaAnimation(app)); 
     anims.add( new GalaAnimationBar(app));
     anims.add( new GalaAnimationTiny(app));
     anims.add( new GalaAnimationAntenna(app));
     anims.add( new GalaAnimationMoire(app));
     anims.add( new GalaAnimationSpiral(app));
-    //anims.add( new GalaAnimationCircles(app));
+   
   }
 
   void setAnimation(int index)
