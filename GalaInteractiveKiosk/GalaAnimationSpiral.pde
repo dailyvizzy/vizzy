@@ -38,6 +38,7 @@ class GalaAnimationSpiral extends AbstractAnimation {
     super.draw();
     
     background(255, 240, 255);
+    sineCircles();
     fill(0);
     
     x=100;
