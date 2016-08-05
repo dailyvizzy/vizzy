@@ -16,7 +16,7 @@ AbstractAnimation dailyAnimation;
 void setup () {
 
   noCursor();
-  fullScreen();
+  fullScreen(P3D);
   smooth();
   frameRate(60);
   textAlign(CENTER, CENTER);

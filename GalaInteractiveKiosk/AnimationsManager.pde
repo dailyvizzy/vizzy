@@ -20,7 +20,7 @@ class AnimationsManager {
     anims.add( new GalaAnimationAntenna(app));
     anims.add( new GalaAnimationMoire(app));
     anims.add( new GalaAnimationSpiral(app));
-   
+    anims.add( new GalaAnimationCubes(app));
   }
 
   void setAnimation(int index)

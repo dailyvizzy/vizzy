@@ -49,7 +49,7 @@ class GalaAnimationMoire extends AbstractAnimation {
       }
       popMatrix();
     }
-    
+
     x=0;
     for (int i=0; i<5; i++) 
     {
@@ -63,8 +63,8 @@ class GalaAnimationMoire extends AbstractAnimation {
         fill(0);
         text(tally[i], x, nodeLocY[i]);
       }
-      renderText();
     }
+    renderText();
   }
   public void keyPressed(int key) {
     switch(key) {
