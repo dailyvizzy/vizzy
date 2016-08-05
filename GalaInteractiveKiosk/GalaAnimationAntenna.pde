@@ -45,7 +45,6 @@ class GalaAnimationAntenna extends AbstractAnimation {
         text(tally[i], x, nodeLocY[i]-2);
       }
     }
-    renderText();
   }
 
   public void keyPressed(int key) {

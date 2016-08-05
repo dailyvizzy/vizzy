@@ -61,8 +61,6 @@ class GalaAnimationTiny extends AbstractAnimation {
         image(image, x+vizObjectLocX[i], y+vizObjectLocY[i], objSize, objSize);
       }
     }
-    //fill(0);
-    //text(question, width/2, qEdgeDist);
     renderText();
   }
 

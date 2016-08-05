@@ -20,6 +20,7 @@ class GalaAnimationMoire extends AbstractAnimation {
       nodeLocY[i]=(height/2) + random(-100, 300);
       vizObjectsColor[i] = random(0, 255);
     }
+    fill(0);
     renderText();
   }
 
@@ -64,6 +65,7 @@ class GalaAnimationMoire extends AbstractAnimation {
         text(tally[i], x, nodeLocY[i]);
       }
     }
+    fill(0);
     renderText();
   }
   public void keyPressed(int key) {
@@ -102,6 +104,7 @@ class GalaAnimationMoire extends AbstractAnimation {
       {
         nodeLocY[i]=(height/2) + random(-100, 300);
       }
+      fill(0);
       renderText();
       break;
     }
