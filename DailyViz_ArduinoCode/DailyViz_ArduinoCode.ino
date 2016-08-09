@@ -16,6 +16,7 @@ const int LEDtwo = 6;
 const int LEDthree = 5;
 const int LEDfour = 4;
 const int LEDfive = 3;
+const int resetLED = 2;
 
 int buttonDelay = 50;
 
@@ -32,6 +33,7 @@ void setup() { // initialize the buttons' inputs:
   pinMode(LEDthree, OUTPUT);
   pinMode(LEDfour, OUTPUT);
   pinMode(LEDfive, OUTPUT);
+  pinMode(resetLED, OUTPUT);
 
   Serial.begin(9600);
   Keyboard.begin();
@@ -76,6 +78,7 @@ void loop() {
     }
   }
   else if (digitalRead(reset) == HIGH) {
+    digitalWrite(resetLED, HIGH);
     delay(buttonDelay);
     if (digitalRead(reset) == LOW) {
       Keyboard.write('0');
@@ -86,4 +89,5 @@ void loop() {
   digitalWrite(LEDthree, LOW);
   digitalWrite(LEDfour, LOW);
   digitalWrite(LEDfive, LOW);
+  digitalWrite(resetLED, LOW);
 }
