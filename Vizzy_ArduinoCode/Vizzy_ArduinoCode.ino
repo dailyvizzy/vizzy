@@ -1,5 +1,5 @@
 
-// Vizzy Arduino Code 72u Summer Session
+// Vizzy Arduino Code - 72u Summer Session
 
 #include "Keyboard.h"
 
