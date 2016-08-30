@@ -3,6 +3,7 @@
 VIZZY is designed to spark daily conversations by giving you a look at how your community feels about a given topic. 
 It serves up the questions, questions are pulled from a spreadsheet to which questions can be added or removed at any time, and provides a real-time visualization of the responses received each day. The system runs on a <a href="https://processing.org/">Processing</a> sketch with <a href=https://www.adafruit.com/products/1187">button</a> input from an <a href="https://www.arduino.cc/en/Main/ArduinoBoardLeonardo">Arduino Leonardo</a>.
 <br>
+<br>
 <b>How to engage with VIZZY:</b>
 All questions are on a 1-5 scale. There are 5 “voting” buttons and each press counts toward a corresponding visualization on the screen. The more a button is pressed, the more that visualization changes. Each press registers one vote and no two buttons can be pressed at exactly the same time. Ideally each participant will vote once per visualization.
 A 6th "new question" button on top of the kiosk, resets the question and visualization. If any button presses have been registered, the current visualization is saved into an optional preconfigured dropbox folder. 
@@ -11,7 +12,7 @@ The buttons are controlled with an Arduino Leonardo, the code for which is inclu
 <br>
 <br>
 <b>Accessing, viewing and deleting the visualization screen captures:</b>
-The easiest way to do this is via an internet synchronized Dropbox folder from any other computer, but can be done from the Dropbox folder on the host computer as well. The code is configured to send images to a folder called “saved_daily_images”.
+The easiest way to do this is via an internet synchronized Dropbox folder from any other computer, but can be done from any folder on the host computer as well. The code is configured to send images to a folder called “saved_daily_images”.
 <br>
 <br>
 <b>Adding a new question to the csv spreadsheet:</b>
