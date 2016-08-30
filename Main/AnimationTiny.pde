@@ -1,4 +1,4 @@
-class GalaAnimationTiny extends AbstractAnimation {
+class AnimationTiny extends AbstractAnimation {
 
   private float x=0; 
   private float y=0;   //general x and y
@@ -15,7 +15,7 @@ class GalaAnimationTiny extends AbstractAnimation {
 
 
 
-  GalaAnimationTiny(PApplet app) {
+  AnimationTiny(PApplet app) {
     super(app);
   } 
 

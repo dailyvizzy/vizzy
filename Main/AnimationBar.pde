@@ -1,4 +1,4 @@
-class GalaAnimationBar extends AbstractAnimation {
+class AnimationBar extends AbstractAnimation {
 
   private float x=0; 
   private float y=0;   //general x and y
@@ -7,7 +7,7 @@ class GalaAnimationBar extends AbstractAnimation {
   int vizObjectsColor[]={10, 60, 120, 160, 200};
   int tally[]={0, 0, 0, 0, 0};
 
-  GalaAnimationBar(PApplet app) {
+  AnimationBar(PApplet app) {
     super(app);
   } 
 

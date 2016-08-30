@@ -1,4 +1,4 @@
-class GalaAnimationMoire extends AbstractAnimation {
+class AnimationMoire extends AbstractAnimation {
 
   private float x=0; 
 
@@ -8,7 +8,7 @@ class GalaAnimationMoire extends AbstractAnimation {
   float vizObjectsColor[]={0, 0, 0, 0, 0};
   int tally[]={0, 0, 0, 0, 0};
 
-  GalaAnimationMoire(PApplet app) {
+  AnimationMoire(PApplet app) {
     super(app);
   } 
 

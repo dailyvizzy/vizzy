@@ -1,4 +1,4 @@
-class GalaAnimationSpiral extends AbstractAnimation {
+class AnimationSpiral extends AbstractAnimation {
 
   private float x = 0;
   float posx, posy;
@@ -13,7 +13,7 @@ class GalaAnimationSpiral extends AbstractAnimation {
   float spiralAngles[] = {0, 0, 0, 0, 0};
   
 
-  GalaAnimationSpiral(PApplet app) {
+  AnimationSpiral(PApplet app) {
     super(app);
   } 
 

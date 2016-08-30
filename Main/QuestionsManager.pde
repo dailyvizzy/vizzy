@@ -6,8 +6,8 @@ class QuestionsManager {
   String movingQuestion; //represents moving question
   
   QuestionsManager() { 
-    //table = loadTable("data/questions/Gala_CSV_Questions.csv");
-    table = loadTable("/Users/gala/Dropbox/Gala_CSV_Questions.csv"); 
+    table = loadTable("data/questions/Gala_CSV_Questions.csv");
+   //table = loadTable("/Users/gala/Dropbox/Gala_CSV_Questions.csv"); 
   } 
   
   private void loadQuestion() {
@@ -26,8 +26,8 @@ class QuestionsManager {
     movingQuestion = table.getString(table.getRowCount()-1, 0);    //move the bottom row string to the top
     table.setString(0, 0, movingQuestion);
     table.removeRow(table.getRowCount()-1); 
-    //saveTable(table, "data/questions/Gala_CSV_Questions.csv");           // Writing the CSV back to the same file
-    saveTable(table, "/Users/gala/Dropbox/Gala_CSV_Questions.csv");           // Writing the CSV back to the same file
+    saveTable(table, "data/questions/Gala_CSV_Questions.csv");           // Writing the CSV back to the same file
+    //saveTable(table, "/Users/gala/Dropbox/Gala_CSV_Questions.csv");           // Writing the CSV back to the same file
     
   }
   

@@ -1,4 +1,4 @@
-class GalaAnimationCircles extends AbstractAnimation {
+class AnimationCircles extends AbstractAnimation {
 
   private float x=0; 
   private float y=0;   //general x and y
@@ -17,7 +17,7 @@ class GalaAnimationCircles extends AbstractAnimation {
   int vizObjectsColor[]={10, 60, 120, 160, 200};
   int yPositions[]={300, 450, 600, 750, 900};
 
-  GalaAnimationCircles(PApplet app) {
+  AnimationCircles(PApplet app) {
     super(app);
   } 
 

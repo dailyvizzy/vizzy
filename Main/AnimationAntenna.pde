@@ -1,4 +1,4 @@
-class GalaAnimationAntenna extends AbstractAnimation {
+class AnimationAntenna extends AbstractAnimation {
 
   float x=0;
   int vizObjectsColor[]={160, 120, 80, 60, 20};
@@ -6,7 +6,7 @@ class GalaAnimationAntenna extends AbstractAnimation {
   float nodeLocX[]={0, 0, 0, 0, 0};
   float nodeLocY[]={0, 0, 0, 0, 0};
 
-  GalaAnimationAntenna(PApplet app) {
+  AnimationAntenna(PApplet app) {
     super(app);
   } 
 

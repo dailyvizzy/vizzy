@@ -1,4 +1,4 @@
-class GalaAnimationCubes extends AbstractAnimation {
+class AnimationCubes extends AbstractAnimation {
 
   private float x=0; 
   private float y=0;   //general x and y
@@ -11,7 +11,7 @@ class GalaAnimationCubes extends AbstractAnimation {
   float rotY[]={0, 0, 0, 0, 0};
   float size[]={0, 0, 0, 0, 0};
 
-  GalaAnimationCubes(PApplet app) {
+  AnimationCubes(PApplet app) {
     super(app);
   } 
 

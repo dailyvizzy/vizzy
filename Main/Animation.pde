@@ -1,4 +1,4 @@
-class GalaAnimation extends AbstractAnimation {
+class Animation extends AbstractAnimation {
 
   private float x=0; 
   private float y=0;   //general x and y
@@ -8,7 +8,7 @@ class GalaAnimation extends AbstractAnimation {
   int tally[]={0, 0, 0, 0, 0};
 
 
-  GalaAnimation(PApplet app) {
+  Animation(PApplet app) {
     super(app);
   } 
 
